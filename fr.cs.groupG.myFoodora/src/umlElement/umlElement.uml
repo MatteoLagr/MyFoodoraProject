@@ -94,8 +94,13 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_IwLFwDsdEfCFxZ0kJb6EuQ" name="username" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_JAsOADsdEfCFxZ0kJb6EuQ" name="surname" visibility="protected">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_JAsOADsdEfCFxZ0kJb6EuQ" name="password" visibility="protected">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Uh-DYDseEfCFxZ0kJb6EuQ" name="surname" visibility="protected">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Z1pjgDseEfCFxZ0kJb6EuQ" name="login"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_dqTg4DseEfCFxZ0kJb6EuQ" name="logout"/>
   </packagedElement>
 </uml:Model>
