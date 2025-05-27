@@ -199,9 +199,5 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_9d7ScDs9EfCFxZ0kJb6EuQ" name="Class16"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_zbZBEDs-EfCFxZ0kJb6EuQ" name="Class17"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_nMJnkDs_EfCFxZ0kJb6EuQ" name="Class18">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_chrXADtBEfCwQ_ENXJj7OA" name="Property1"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ts4ewDtBEfCFxZ0kJb6EuQ" name="truc"/>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_yi0k4Ds_EfCwQ_ENXJj7OA" name="Class19"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Y4IoADtCEfCwQ_ENXJj7OA" name="methoderetourmemeversion"/>
 </uml:Model>
