@@ -103,4 +103,26 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Z1pjgDseEfCFxZ0kJb6EuQ" name="login"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_dqTg4DseEfCFxZ0kJb6EuQ" name="logout"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_v51DADs3EfCwQ_ENXJj7OA" name="Interface8" visibility="protected">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3oOSEDs3EfCwQ_ENXJj7OA" name="getPrice" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ACnrgDs4EfCwQ_ENXJj7OA" name="Menu"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AVSI0Ds4EfCwQ_ENXJj7OA" name="Dish">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OK3YkDs4EfCwQ_ENXJj7OA" name="price" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OcJ84Ds4EfCwQ_ENXJj7OA" name="vegetarian" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OsT4wDs4EfCwQ_ENXJj7OA" name="glutenFree" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_O-HacDs4EfCwQ_ENXJj7OA" name="category" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_POD68Ds4EfCwQ_ENXJj7OA" name="name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ArGAwDs4EfCwQ_ENXJj7OA" name="Meal"/>
 </uml:Model>
