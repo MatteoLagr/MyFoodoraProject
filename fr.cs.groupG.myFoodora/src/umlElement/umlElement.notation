@@ -6,6 +6,10 @@
       <layoutConstraint xmi:type="notation:Location" xmi:id="_CqqWgTsREfCFxZ0kJb6EuQ" y="15"/>
     </children>
     <children xmi:type="notation:BasicCompartment" xmi:id="_Cqv2EDsREfCFxZ0kJb6EuQ" type="Class_AttributeCompartment">
+      <children xmi:type="notation:Shape" xmi:id="_kaMzQDsREfCFxZ0kJb6EuQ" type="Property_ClassAttributeLabel">
+        <element xmi:type="uml:Property" href="umlElement.uml#_kaAmADsREfCFxZ0kJb6EuQ"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kaMzQTsREfCFxZ0kJb6EuQ"/>
+      </children>
       <styles xmi:type="notation:TitleStyle" xmi:id="_Cqv2ETsREfCFxZ0kJb6EuQ"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_Cqv2EjsREfCFxZ0kJb6EuQ"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Cqv2EzsREfCFxZ0kJb6EuQ"/>
@@ -24,7 +28,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cqv2HjsREfCFxZ0kJb6EuQ"/>
     </children>
     <element xmi:type="uml:Class" href="umlElement.uml#_CqDSgDsREfCFxZ0kJb6EuQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqdiMTsREfCFxZ0kJb6EuQ" x="320" y="120" width="281" height="158"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CqdiMTsREfCFxZ0kJb6EuQ" x="400" y="180" width="281" height="158"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_WkTacDsREfCwQ_ENXJj7OA" type="Class_Shape">
     <children xmi:type="notation:DecorationNode" xmi:id="_WkVPoDsREfCwQ_ENXJj7OA" type="Class_NameLabel"/>
@@ -50,7 +54,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkXE0TsREfCwQ_ENXJj7OA"/>
     </children>
     <element xmi:type="uml:Class" href="umlElement.uml#_WkCUsDsREfCwQ_ENXJj7OA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkTacTsREfCwQ_ENXJj7OA" x="120" y="191" width="687" height="330"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WkTacTsREfCwQ_ENXJj7OA" x="40" y="160" width="281" height="201"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_WEgK8TsPEfCFxZ0kJb6EuQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WEgK8jsPEfCFxZ0kJb6EuQ"/>
