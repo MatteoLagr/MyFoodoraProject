@@ -197,4 +197,5 @@
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_vZ2wMDs8EfCwQ_ENXJj7OA" name="Operation4"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_9d7ScDs9EfCFxZ0kJb6EuQ" name="Class16"/>
 </uml:Model>
