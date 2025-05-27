@@ -4,4 +4,5 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Class" xmi:id="_CqDSgDsREfCFxZ0kJb6EuQ" name="Class2"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WkCUsDsREfCwQ_ENXJj7OA" name="Class3"/>
 </uml:Model>
