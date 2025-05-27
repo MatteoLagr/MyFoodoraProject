@@ -785,7 +785,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yi3oQDs_EfCwQ_ENXJj7OA"/>
     </children>
     <element xmi:type="uml:Class" href="umlElement.uml#_yi0k4Ds_EfCwQ_ENXJj7OA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yi3BITs_EfCwQ_ENXJj7OA" x="1740" y="680" width="280" height="120"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yi3BITs_EfCwQ_ENXJj7OA" x="2140" y="540" width="280" height="120"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_WEgK8TsPEfCFxZ0kJb6EuQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WEgK8jsPEfCFxZ0kJb6EuQ"/>
