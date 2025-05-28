@@ -4,6 +4,7 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Class" xmi:id="_CqDSgDsREfCFxZ0kJb6EuQ" name="Customer">
+    <generalization xmi:type="uml:Generalization" xmi:id="_ysKZwDvREfCAacSftj9JeA" general="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_040doDsYEfCFxZ0kJb6EuQ" name="address" visibility="private" type="_kOj8QDsXEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_1It60DsYEfCFxZ0kJb6EuQ" name="email" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -25,6 +26,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tDBCMDscEfCFxZ0kJb6EuQ" name="addFidelityPoints"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_WkCUsDsREfCwQ_ENXJj7OA" name="Courier">
+    <generalization xmi:type="uml:Generalization" xmi:id="_w_kqMDvTEfCAacSftj9JeA" general="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hA8wwDsXEfCFxZ0kJb6EuQ" name="position" visibility="private" type="_kOj8QDsXEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hX-wsDsXEfCFxZ0kJb6EuQ" name="phoneNumber" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -49,6 +51,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_pX7CwDsXEfCFxZ0kJb6EuQ" name="distanceTo"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_pkxWgDsYEfCFxZ0kJb6EuQ" name="Restaurants">
+    <generalization xmi:type="uml:Generalization" xmi:id="_zX_lADvREfCAacSftj9JeA" general="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_5iOm0DsaEfCFxZ0kJb6EuQ" name="location" visibility="private" type="_kOj8QDsXEfCFxZ0kJb6EuQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_6R3UADsaEfCFxZ0kJb6EuQ" name="menu" visibility="private"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9GCEwDsaEfCFxZ0kJb6EuQ" name="meals" visibility="private"/>
@@ -68,6 +71,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ozQ5sDsbEfCFxZ0kJb6EuQ" name="Operation13"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_sZ-CADsYEfCFxZ0kJb6EuQ" name="Manager">
+    <generalization xmi:type="uml:Generalization" xmi:id="_0LNKoDvREfCAacSftj9JeA" general="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tgoSoDsZEfCFxZ0kJb6EuQ" name="addUser"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_tzVMMDsZEfCFxZ0kJb6EuQ" name="removeUser"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_uDXzUDsZEfCFxZ0kJb6EuQ" name="deactivateUser"/>
@@ -235,6 +239,7 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Pmxf0DuOEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_zuSWADuNEfCwQ_ENXJj7OA" name="LeastOrderedMenuItem">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_yfEjgDvSEfCAacSftj9JeA" client="_zuSWADuNEfCwQ_ENXJj7OA" supplier="_KZyTADuNEfCwQ_ENXJj7OA" contract="_KZyTADuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_P399gDuOEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_09D2QDuNEfCwQ_ENXJj7OA" name="Class26"/>
@@ -359,11 +364,9 @@
   <packagedElement xmi:type="uml:Dependency" xmi:id="_3aXFgDuVEfCwQ_ENXJj7OA" client="_HkN0EDuNEfCwQ_ENXJj7OA" supplier="_2vS2oDuSEfCwQ_ENXJj7OA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_38e7IDuVEfCwQ_ENXJj7OA" client="_KZyTADuNEfCwQ_ENXJj7OA" supplier="_3J3SwDuSEfCwQ_ENXJj7OA"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_43cukDuVEfCwQ_ENXJj7OA" client="_ViAIIDuOEfCwQ_ENXJj7OA" supplier="_3g0aMDuSEfCwQ_ENXJj7OA"/>
-  <packagedElement xmi:type="uml:Realization" xmi:id="_QMcfEDuWEfCwQ_ENXJj7OA" client="_WkCUsDsREfCwQ_ENXJj7OA" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_RORvgDuWEfCwQ_ENXJj7OA" client="_CqDSgDsREfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_R5kIMDuWEfCwQ_ENXJj7OA" client="_pkxWgDsYEfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_Sf6WgDuWEfCwQ_ENXJj7OA" client="_sZ-CADsYEfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_jir7ADuWEfCwQ_ENXJj7OA" client="_sYXpoDuTEfCwQ_ENXJj7OA" supplier="_sDLcwDuTEfCwQ_ENXJj7OA"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_vDZlIDuWEfCwQ_ENXJj7OA" client="_3NPXUDsYEfCFxZ0kJb6EuQ" supplier="_1b7KQDuSEfCwQ_ENXJj7OA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_9Je7wDumEfCAacSftj9JeA" name="Class55"/>
 </uml:Model>
