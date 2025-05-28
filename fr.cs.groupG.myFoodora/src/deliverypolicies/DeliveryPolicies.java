@@ -1,7 +1,9 @@
 package deliverypolicies;
 
+import users.Courier;
+
 public interface DeliveryPolicies {
 	
-	// test gros paf
+	public Courier selectCourier();
 
 }
