@@ -3,5 +3,43 @@ package users;
 public abstract class Users {
 	
 	protected String name;
+    protected String surname;
+    protected int id;
+    protected String username;
+    protected String password;
+    
+    public Users(String name, String surname, int id, String username, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+    
+   
+    public String getName() { 
+    	return name; 
+    	}
+    
+    public String getSurname() { 
+    	return surname; 
+    	}
+    
+    public int getId() { 
+    	return id; 
+    	}
+    
+    public String getUsername() { 
+    	return username; 
+    	}
+    
+    public void setPassword(String password) { 
+    	this.password = password; 
+    	}
+    
+    public boolean login(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);
+    }
+    
 
 }
