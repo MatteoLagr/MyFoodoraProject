@@ -1,4 +1,4 @@
-package Sellable;
+package sellable;
 
 public class SellableFactory {
 
