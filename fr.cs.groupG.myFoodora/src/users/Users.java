@@ -2,6 +2,6 @@ package users;
 
 public abstract class Users {
 	
-	private 
+	protected String name;
 
 }
