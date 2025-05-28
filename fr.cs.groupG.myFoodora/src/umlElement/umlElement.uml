@@ -16,6 +16,7 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_WotfsDsZEfCFxZ0kJb6EuQ" name="orderHistory" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_W9D_EDsZEfCFxZ0kJb6EuQ" name="Property7"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_bM4HEDscEfCFxZ0kJb6EuQ" name="placeOrder"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_bvnnwDscEfCFxZ0kJb6EuQ" name="registerFidelity"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_dh2aYDscEfCFxZ0kJb6EuQ" name="unsubscribeFidelity"/>
@@ -58,6 +59,7 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9xYH0DsaEfCFxZ0kJb6EuQ" name="mealOfWeek" visibility="private"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_pZxqMDuWEfCwQ_ENXJj7OA" client="_pkxWgDsYEfCFxZ0kJb6EuQ" supplier="_sYXpoDuTEfCwQ_ENXJj7OA" contract="_sYXpoDuTEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_-7rXwDsaEfCFxZ0kJb6EuQ" name="addDish"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__JiNkDsaEfCFxZ0kJb6EuQ" name="removeDish"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__W4GADsaEfCFxZ0kJb6EuQ" name="createMeal"/>
@@ -108,6 +110,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ErL8oDs5EfCwQ_ENXJj7OA" name="starters" visibility="private"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_E-rgYDs5EfCwQ_ENXJj7OA" name="mainDishes" visibility="private"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_FRcEUDs5EfCwQ_ENXJj7OA" name="desserts"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_FGXigDuWEfCwQ_ENXJj7OA" client="_ACnrgDs4EfCwQ_ENXJj7OA" supplier="_v51DADs3EfCwQ_ENXJj7OA" contract="_v51DADs3EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_R6kdIDs7EfCwQ_ENXJj7OA" name="addDish" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Sch6sDs7EfCwQ_ENXJj7OA" name="removeDish" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_SyFT8Ds7EfCwQ_ENXJj7OA" name="getAllDishes" visibility="private"/>
@@ -128,6 +131,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_POD68Ds4EfCwQ_ENXJj7OA" name="name" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_Fp67gDuWEfCwQ_ENXJj7OA" client="_AVSI0Ds4EfCwQ_ENXJj7OA" supplier="_v51DADs3EfCwQ_ENXJj7OA" contract="_v51DADs3EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_h2K-MDs7EfCwQ_ENXJj7OA" name="isVegetarian" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_iKscsDs7EfCwQ_ENXJj7OA" name="isGlutenFree"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_if5QoDs7EfCwQ_ENXJj7OA" name="isStandard" visibility="private"/>
@@ -155,6 +159,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_IFp4YDs5EfCwQ_ENXJj7OA" name="priceMeal" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_GbhXkDuWEfCwQ_ENXJj7OA" client="_ArGAwDs4EfCwQ_ENXJj7OA" supplier="_v51DADs3EfCwQ_ENXJj7OA" contract="_v51DADs3EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_xEp6kDs7EfCwQ_ENXJj7OA" name="defineMealType"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_xVTlsDs7EfCwQ_ENXJj7OA" name="defineMealSize" visibility="private"/>
   </packagedElement>
@@ -172,6 +177,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_oTIlIDs8EfCwQ_ENXJj7OA" name="markupPercentage" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_HcXwkDuWEfCwQ_ENXJj7OA" client="_GBWW8Ds8EfCwQ_ENXJj7OA" supplier="_DOIocDs8EfCwQ_ENXJj7OA" contract="_DOIocDs8EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_uMPtkDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_H3qYUDs8EfCwQ_ENXJj7OA" name="TargetProfitServiceFee">
@@ -184,6 +190,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_pGn3kDs8EfCwQ_ENXJj7OA" name="deliveryCost" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_H7t_ADuWEfCwQ_ENXJj7OA" client="_H3qYUDs8EfCwQ_ENXJj7OA" supplier="_DOIocDs8EfCwQ_ENXJj7OA" contract="_DOIocDs8EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_u5MTIDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_KJ6HwDs8EfCwQ_ENXJj7OA" name="TargetProfitMarkup">
@@ -196,6 +203,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_p-2gEDs8EfCwQ_ENXJj7OA" name="deliveryCost" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_IiuUoDuWEfCwQ_ENXJj7OA" client="_KJ6HwDs8EfCwQ_ENXJj7OA" supplier="_DOIocDs8EfCwQ_ENXJj7OA" contract="_DOIocDs8EfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_vZ2wMDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_9d7ScDs9EfCFxZ0kJb6EuQ" name="Class16"/>
@@ -204,21 +212,26 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_VZndoDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_IOijcDuNEfCwQ_ENXJj7OA" name="FastestDelivery">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UD6f4DuWEfCwQ_ENXJj7OA" client="_IOijcDuNEfCwQ_ENXJj7OA" supplier="_HkN0EDuNEfCwQ_ENXJj7OA" contract="_HkN0EDuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_V1m2EDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_IvpscDuNEfCwQ_ENXJj7OA" name="FairOccupationDelivery">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_UmNUoDuWEfCwQ_ENXJj7OA" client="_IvpscDuNEfCwQ_ENXJj7OA" supplier="_HkN0EDuNEfCwQ_ENXJj7OA" contract="_HkN0EDuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_WGZEEDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_KZyTADuNEfCwQ_ENXJj7OA" name="ShippedOrderSortingPolicies">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_mS_OgDuNEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_fHxlADuNEfCwQ_ENXJj7OA" name="MostOrderedHalfMeal">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VI05gDuWEfCwQ_ENXJj7OA" client="_fHxlADuNEfCwQ_ENXJj7OA" supplier="_KZyTADuNEfCwQ_ENXJj7OA" contract="_KZyTADuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_uB-6gDuNEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ywBW8DuNEfCwQ_ENXJj7OA" name="LeastOrderedHalfMeal">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_VkEEADuWEfCwQ_ENXJj7OA" client="_ywBW8DuNEfCwQ_ENXJj7OA" supplier="_KZyTADuNEfCwQ_ENXJj7OA" contract="_KZyTADuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_PU_MQDuOEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_zIbP4DuNEfCwQ_ENXJj7OA" name="MostOrderedMenuItem">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_V98joDuWEfCwQ_ENXJj7OA" client="_zIbP4DuNEfCwQ_ENXJj7OA" supplier="_KZyTADuNEfCwQ_ENXJj7OA" contract="_KZyTADuNEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Pmxf0DuOEfCwQ_ENXJj7OA" name="sortItems"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_zuSWADuNEfCwQ_ENXJj7OA" name="LeastOrderedMenuItem">
@@ -231,6 +244,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_ZwI8gDuOEfCwQ_ENXJj7OA" name="BasicFidelityCard">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_j_wyMDuOEfCwQ_ENXJj7OA" name="customer" visibility="private" type="_CqDSgDsREfCFxZ0kJb6EuQ"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_W1TpcDuWEfCwQ_ENXJj7OA" client="_ZwI8gDuOEfCwQ_ENXJj7OA" supplier="_ViAIIDuOEfCwQ_ENXJj7OA" contract="_ViAIIDuOEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_oNkPYDuOEfCwQ_ENXJj7OA" name="getNormalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qfBUoDuOEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
   </packagedElement>
@@ -239,6 +253,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_kiP0MDuOEfCwQ_ENXJj7OA" name="numberPoints" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XQKZcDuWEfCwQ_ENXJj7OA" client="_aJROMDuOEfCwQ_ENXJj7OA" supplier="_ViAIIDuOEfCwQ_ENXJj7OA" contract="_ViAIIDuOEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_O1sywDuPEfCwQ_ENXJj7OA" name="getNormalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_TYBHYDuPEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_aF8X8DuPEfCwQ_ENXJj7OA" name="useDiscount"/>
@@ -252,6 +267,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_lNLAgDuOEfCwQ_ENXJj7OA" name="hasWon" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_XxrLEDuWEfCwQ_ENXJj7OA" client="_adBQoDuOEfCwQ_ENXJj7OA" supplier="_ViAIIDuOEfCwQ_ENXJj7OA" contract="_ViAIIDuOEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_PHGr0DuPEfCwQ_ENXJj7OA" name="getNormalPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_XsVcQDuPEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qw22EDuPEfCwQ_ENXJj7OA" name="customerHasWon"/>
@@ -274,6 +290,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_-nrPgDuPEfCwQ_ENXJj7OA" name="deliveryPoilicy" visibility="private" type="_HkN0EDuNEfCwQ_ENXJj7OA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_-4n1kDuPEfCwQ_ENXJj7OA" name="productFactory"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="__TvO0DuQEfCwQ_ENXJj7OA" name="targetProfitPolicyChoosen" visibility="private" type="_DOIocDs8EfCwQ_ENXJj7OA"/>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_bkv0EDuWEfCwQ_ENXJj7OA" client="_xI5WMDuPEfCwQ_ENXJj7OA" supplier="_sDLcwDuTEfCwQ_ENXJj7OA" contract="_sDLcwDuTEfCwQ_ENXJj7OA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ASUzcDuQEfCwQ_ENXJj7OA" name="computeTotalIncome"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_CtFlsDuQEfCwQ_ENXJj7OA" name="computeTotalProfit"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_DBJxMDuQEfCwQ_ENXJj7OA" name="setTargetProfitPolicy"/>
@@ -310,12 +327,24 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_kuMeIDuREfCwQ_ENXJj7OA" name="calculateTotalPrice"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_yv3MoDuSEfCwQ_ENXJj7OA" name="AbstractFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_1b7KQDuSEfCwQ_ENXJj7OA" name="UsersFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_14a5ADuSEfCwQ_ENXJj7OA" name="SellableFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_2XR_QDuSEfCwQ_ENXJj7OA" name="TargetProfitPoliciesFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_2vS2oDuSEfCwQ_ENXJj7OA" name="DeliveryPoliciesFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_3J3SwDuSEfCwQ_ENXJj7OA" name="ShippedOrderSortingPoliciesFactory"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_3g0aMDuSEfCwQ_ENXJj7OA" name="FidelityCardsFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1b7KQDuSEfCwQ_ENXJj7OA" name="UsersFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_YeDlYDuVEfCwQ_ENXJj7OA" client="_1b7KQDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_14a5ADuSEfCwQ_ENXJj7OA" name="SellableFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_cEaBADuVEfCwQ_ENXJj7OA" client="_14a5ADuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2XR_QDuSEfCwQ_ENXJj7OA" name="TargetProfitPoliciesFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_cqPR8DuVEfCwQ_ENXJj7OA" client="_2XR_QDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2vS2oDuSEfCwQ_ENXJj7OA" name="DeliveryPoliciesFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_dyIuIDuVEfCwQ_ENXJj7OA" client="_2vS2oDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3J3SwDuSEfCwQ_ENXJj7OA" name="ShippedOrderSortingPoliciesFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_eaQeEDuVEfCwQ_ENXJj7OA" client="_3J3SwDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3g0aMDuSEfCwQ_ENXJj7OA" name="FidelityCardsFactory">
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ftRlIDuVEfCwQ_ENXJj7OA" client="_3g0aMDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_sDLcwDuTEfCwQ_ENXJj7OA" name="Observer">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_x5d6sDuTEfCwQ_ENXJj7OA" name="update"/>
   </packagedElement>
@@ -324,4 +353,16 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_2R0bADuTEfCwQ_ENXJj7OA" name="removeObserver"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_2kCzcDuTEfCwQ_ENXJj7OA" name="notifyObserver"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_0g16sDuVEfCwQ_ENXJj7OA" client="_3NPXUDsYEfCFxZ0kJb6EuQ" supplier="_1b7KQDuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_1Qf2ADuVEfCwQ_ENXJj7OA" client="_v51DADs3EfCwQ_ENXJj7OA" supplier="_14a5ADuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_2rdYIDuVEfCwQ_ENXJj7OA" client="_DOIocDs8EfCwQ_ENXJj7OA" supplier="_2XR_QDuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_3aXFgDuVEfCwQ_ENXJj7OA" client="_HkN0EDuNEfCwQ_ENXJj7OA" supplier="_2vS2oDuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_38e7IDuVEfCwQ_ENXJj7OA" client="_KZyTADuNEfCwQ_ENXJj7OA" supplier="_3J3SwDuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_43cukDuVEfCwQ_ENXJj7OA" client="_ViAIIDuOEfCwQ_ENXJj7OA" supplier="_3g0aMDuSEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_QMcfEDuWEfCwQ_ENXJj7OA" client="_WkCUsDsREfCwQ_ENXJj7OA" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_RORvgDuWEfCwQ_ENXJj7OA" client="_CqDSgDsREfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_R5kIMDuWEfCwQ_ENXJj7OA" client="_pkxWgDsYEfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_Sf6WgDuWEfCwQ_ENXJj7OA" client="_sZ-CADsYEfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_jir7ADuWEfCwQ_ENXJj7OA" client="_sYXpoDuTEfCwQ_ENXJj7OA" supplier="_sDLcwDuTEfCwQ_ENXJj7OA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_vDZlIDuWEfCwQ_ENXJj7OA" client="_3NPXUDsYEfCFxZ0kJb6EuQ" supplier="_1b7KQDuSEfCwQ_ENXJj7OA"/>
 </uml:Model>
