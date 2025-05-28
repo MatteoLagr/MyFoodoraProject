@@ -16,7 +16,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_WotfsDsZEfCFxZ0kJb6EuQ" name="orderHistory" visibility="private"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_W9D_EDsZEfCFxZ0kJb6EuQ" name="Property7"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_bM4HEDscEfCFxZ0kJb6EuQ" name="placeOrder"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_bvnnwDscEfCFxZ0kJb6EuQ" name="registerFidelity"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_dh2aYDscEfCFxZ0kJb6EuQ" name="unsubscribeFidelity"/>
@@ -59,7 +58,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9xYH0DsaEfCFxZ0kJb6EuQ" name="mealOfWeek" visibility="private"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_9_BiQDsaEfCFxZ0kJb6EuQ" name="Property7"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_-7rXwDsaEfCFxZ0kJb6EuQ" name="addDish"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__JiNkDsaEfCFxZ0kJb6EuQ" name="removeDish"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="__W4GADsaEfCFxZ0kJb6EuQ" name="createMeal"/>
