@@ -160,7 +160,10 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_xEp6kDs7EfCwQ_ENXJj7OA" name="defineMealType"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_xVTlsDs7EfCwQ_ENXJj7OA" name="defineMealSize" visibility="private"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interface" xmi:id="_DOIocDs8EfCwQ_ENXJj7OA" name="TargetProfitPolicies"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_DOIocDs8EfCwQ_ENXJj7OA" name="TargetProfitPolicies">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kAFNMDuMEfCwQ_ENXJj7OA" name="computeParameters" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_6-QZIDuMEfCwQ_ENXJj7OA" name="getPolicyName"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_GBWW8Ds8EfCwQ_ENXJj7OA" name="TargetProfitDeliveryCost" visibility="private">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_nYvZcDs8EfCwQ_ENXJj7OA" name="targetProfit" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
@@ -171,7 +174,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_oTIlIDs8EfCwQ_ENXJj7OA" name="markupPercentage" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_uMPtkDs8EfCwQ_ENXJj7OA" name="Operation4"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uMPtkDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_H3qYUDs8EfCwQ_ENXJj7OA" name="TargetProfitServiceFee">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_os_PkDs8EfCwQ_ENXJj7OA" name="targetProfit" visibility="private">
@@ -183,7 +186,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_pGn3kDs8EfCwQ_ENXJj7OA" name="deliveryCost" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_u5MTIDs8EfCwQ_ENXJj7OA" name="Operation4"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_u5MTIDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_KJ6HwDs8EfCwQ_ENXJj7OA" name="TargetProfitMarkup">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_pk8LQDs8EfCwQ_ENXJj7OA" name="targetPrice" visibility="private">
@@ -195,9 +198,117 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_p-2gEDs8EfCwQ_ENXJj7OA" name="deliveryCost" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_vZ2wMDs8EfCwQ_ENXJj7OA" name="Operation4"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_vZ2wMDs8EfCwQ_ENXJj7OA" name="computeParameters"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_9d7ScDs9EfCFxZ0kJb6EuQ" name="Class16"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_zbZBEDs-EfCFxZ0kJb6EuQ" name="Class17"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_Y4IoADtCEfCwQ_ENXJj7OA" name="methoderetourmemeversion"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_HkN0EDuNEfCwQ_ENXJj7OA" name="DeliveryPolicies">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_VZndoDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_IOijcDuNEfCwQ_ENXJj7OA" name="FastestDelivery">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_V1m2EDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_IvpscDuNEfCwQ_ENXJj7OA" name="FairOccupationDelivery">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_WGZEEDuNEfCwQ_ENXJj7OA" name="selectCourier"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_KZyTADuNEfCwQ_ENXJj7OA" name="ShippedOrderSortingPolicies">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_mS_OgDuNEfCwQ_ENXJj7OA" name="sortItems"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_fHxlADuNEfCwQ_ENXJj7OA" name="MostOrderedHalfMeal">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uB-6gDuNEfCwQ_ENXJj7OA" name="sortItems"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ywBW8DuNEfCwQ_ENXJj7OA" name="LeastOrderedHalfMeal">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_PU_MQDuOEfCwQ_ENXJj7OA" name="sortItems"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zIbP4DuNEfCwQ_ENXJj7OA" name="MostOrderedMenuItem">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Pmxf0DuOEfCwQ_ENXJj7OA" name="sortItems"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zuSWADuNEfCwQ_ENXJj7OA" name="LeastOrderedMenuItem">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_P399gDuOEfCwQ_ENXJj7OA" name="sortItems"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_09D2QDuNEfCwQ_ENXJj7OA" name="Class26"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_ViAIIDuOEfCwQ_ENXJj7OA" name="FidelityCards">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uGnGYDuOEfCwQ_ENXJj7OA" name="getNormalPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_uZEvYDuOEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_ZwI8gDuOEfCwQ_ENXJj7OA" name="BasicFidelityCard">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_j_wyMDuOEfCwQ_ENXJj7OA" name="customer" visibility="private" type="_CqDSgDsREfCFxZ0kJb6EuQ"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_oNkPYDuOEfCwQ_ENXJj7OA" name="getNormalPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qfBUoDuOEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aJROMDuOEfCwQ_ENXJj7OA" name="PointFidelityCard">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kRvTADuOEfCwQ_ENXJj7OA" name="customer" visibility="private" type="_CqDSgDsREfCFxZ0kJb6EuQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kiP0MDuOEfCwQ_ENXJj7OA" name="numberPoints" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_O1sywDuPEfCwQ_ENXJj7OA" name="getNormalPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_TYBHYDuPEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_aF8X8DuPEfCwQ_ENXJj7OA" name="useDiscount"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cwpDoDuPEfCwQ_ENXJj7OA" name="setPoints"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_adBQoDuOEfCwQ_ENXJj7OA" name="LotteryFidelityCard">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_kxme0DuOEfCwQ_ENXJj7OA" name="customer" visibility="private" type="_CqDSgDsREfCFxZ0kJb6EuQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_k_cGgDuOEfCwQ_ENXJj7OA" name="probaWin" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_lNLAgDuOEfCwQ_ENXJj7OA" name="hasWon" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_PHGr0DuPEfCwQ_ENXJj7OA" name="getNormalPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_XsVcQDuPEfCwQ_ENXJj7OA" name="computeFidelityPrice"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_qw22EDuPEfCwQ_ENXJj7OA" name="customerHasWon"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xI5WMDuPEfCwQ_ENXJj7OA" name="MyFoodoraSystem">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_8lANIDuPEfCwQ_ENXJj7OA" name="managers" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_80tdEDuPEfCwQ_ENXJj7OA" name="restaurants" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9CezUDuPEfCwQ_ENXJj7OA" name="customers" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9QR-wDuPEfCwQ_ENXJj7OA" name="couriers" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9uHxUDuPEfCwQ_ENXJj7OA" name="orderHistory" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_9-Ff8DuPEfCwQ_ENXJj7OA" name="serviceFee" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-NMS8DuPEfCwQ_ENXJj7OA" name="markupPercentage" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-Z7ucDuPEfCwQ_ENXJj7OA" name="deliveryCost" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-nrPgDuPEfCwQ_ENXJj7OA" name="deliveryPoilicy" visibility="private" type="_HkN0EDuNEfCwQ_ENXJj7OA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-4n1kDuPEfCwQ_ENXJj7OA" name="productFactory"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__TvO0DuQEfCwQ_ENXJj7OA" name="targetProfitPolicyChoosen" visibility="private" type="_DOIocDs8EfCwQ_ENXJj7OA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_ASUzcDuQEfCwQ_ENXJj7OA" name="computeTotalIncome"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CtFlsDuQEfCwQ_ENXJj7OA" name="computeTotalProfit"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DBJxMDuQEfCwQ_ENXJj7OA" name="setTargetProfitPolicy"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DXNgwDuQEfCwQ_ENXJj7OA" name="allocateCourierToOrder"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_DoxK0DuQEfCwQ_ENXJj7OA" name="notifiySpecialOffer"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Qmw10DuREfCwQ_ENXJj7OA" name="update"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WcJU0DuREfCwQ_ENXJj7OA" name="OrderItem">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hrFScDuREfCwQ_ENXJj7OA" name="item" visibility="private" type="_v51DADs3EfCwQ_ENXJj7OA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_h840IDuREfCwQ_ENXJj7OA" name="quantity" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_iOoEYDuREfCwQ_ENXJj7OA" name="priceUnit" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_XVPgADuREfCwQ_ENXJj7OA" name="Order">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fPlgYDuREfCwQ_ENXJj7OA" name="totalPrice" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ffPtADuREfCwQ_ENXJj7OA" name="items" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fzFPADuREfCwQ_ENXJj7OA" name="dateOrderPlaced" visibility="private"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gDpakDuREfCwQ_ENXJj7OA" name="customer" visibility="private" type="_CqDSgDsREfCFxZ0kJb6EuQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gScEgDuREfCwQ_ENXJj7OA" name="courier" visibility="private" type="_WkCUsDsREfCwQ_ENXJj7OA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gguYIDuREfCwQ_ENXJj7OA" name="id" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_gyNwwDuREfCwQ_ENXJj7OA" name="restaurant" visibility="private" type="_pkxWgDsYEfCFxZ0kJb6EuQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_hF3skDuREfCwQ_ENXJj7OA" name="status" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kD4V0DuREfCwQ_ENXJj7OA" name="assignCourier"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kXU2QDuREfCwQ_ENXJj7OA" name="addItem"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_kuMeIDuREfCwQ_ENXJj7OA" name="calculateTotalPrice"/>
+  </packagedElement>
 </uml:Model>
