@@ -1653,7 +1653,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ng30QDuXEfCFxZ0kJb6EuQ"/>
     </children>
     <element xmi:type="uml:Class" href="umlElement.uml#_NgziwDuXEfCFxZ0kJb6EuQ"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ng3NITuXEfCFxZ0kJb6EuQ" x="2609" y="1410"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ng3NITuXEfCFxZ0kJb6EuQ" x="2520" y="1360" width="161" height="161"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_WEgK8TsPEfCFxZ0kJb6EuQ" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_WEgK8jsPEfCFxZ0kJb6EuQ"/>
