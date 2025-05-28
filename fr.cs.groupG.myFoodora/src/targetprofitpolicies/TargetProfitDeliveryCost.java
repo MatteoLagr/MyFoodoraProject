@@ -1,6 +1,6 @@
 package targetprofitpolicies;
 
-public class TargetProfitMarkup  implements TargetProfitPolicies {
+public class TargetProfitDeliveryCost implements TargetProfitPolicies {
 	
 /*	public TargetProfitPolicies getPolicyName() {
 		return;
@@ -16,7 +16,7 @@ public class TargetProfitMarkup  implements TargetProfitPolicies {
 	
 	private double targetProfit;
 	private double serviceFee;
-	private double deliveryCost;
+	private double markupPercentage;
 	
 
 // Getters
@@ -29,8 +29,8 @@ public class TargetProfitMarkup  implements TargetProfitPolicies {
 		return serviceFee;
 	}
 		
-	public double getDeliveryCost() {
-		return deliveryCost;
+	public double getMarkupPercentage() {
+		return markupPercentage;
 	}	
 	
 		
@@ -44,14 +44,14 @@ public class TargetProfitMarkup  implements TargetProfitPolicies {
 		this.serviceFee = serviceFee;
 	}
 	
-	public void setDeliveryCost() {
-		this.deliveryCost = deliveryCost;
+	public void setMarkupPercentage() {
+		this.markupPercentage = markupPercentage;
 	}
 	
-	public TargetProfitMarkup(double targetProfit,double serviceFee,double deliveryCost) {
+	public TargetProfitDeliveryCost(double targetProfit,double serviceFee,double markupPercentage) {
 		this.targetProfit = targetProfit;
 		this.serviceFee = serviceFee;
-		this.deliveryCost = deliveryCost;
+		this.markupPercentage = markupPercentage;
 	}
 		
 		
