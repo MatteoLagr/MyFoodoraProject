@@ -365,5 +365,5 @@
   <packagedElement xmi:type="uml:Realization" xmi:id="_Sf6WgDuWEfCwQ_ENXJj7OA" client="_sZ-CADsYEfCFxZ0kJb6EuQ" supplier="_3NPXUDsYEfCFxZ0kJb6EuQ"/>
   <packagedElement xmi:type="uml:Dependency" xmi:id="_jir7ADuWEfCwQ_ENXJj7OA" client="_sYXpoDuTEfCwQ_ENXJj7OA" supplier="_sDLcwDuTEfCwQ_ENXJj7OA"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_vDZlIDuWEfCwQ_ENXJj7OA" client="_3NPXUDsYEfCFxZ0kJb6EuQ" supplier="_1b7KQDuSEfCwQ_ENXJj7OA"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_NgziwDuXEfCFxZ0kJb6EuQ" name="Class55"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_NgziwDuXEfCFxZ0kJb6EuQ" name="ClassTestqje"/>
 </uml:Model>
