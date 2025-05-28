@@ -381,4 +381,5 @@
       <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_ftRlIDuVEfCwQ_ENXJj7OA" client="_3g0aMDuSEfCwQ_ENXJj7OA" supplier="_yv3MoDuSEfCwQ_ENXJj7OA" contract="_yv3MoDuSEfCwQ_ENXJj7OA"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_WXoJIDv9EfCFxZ0kJb6EuQ" name="Class29"/>
 </uml:Model>
