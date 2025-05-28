@@ -311,4 +311,19 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_kXU2QDuREfCwQ_ENXJj7OA" name="addItem"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_kuMeIDuREfCwQ_ENXJj7OA" name="calculateTotalPrice"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_yv3MoDuSEfCwQ_ENXJj7OA" name="AbstractFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_1b7KQDuSEfCwQ_ENXJj7OA" name="UsersFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_14a5ADuSEfCwQ_ENXJj7OA" name="SellableFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2XR_QDuSEfCwQ_ENXJj7OA" name="TargetProfitPoliciesFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2vS2oDuSEfCwQ_ENXJj7OA" name="DeliveryPoliciesFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3J3SwDuSEfCwQ_ENXJj7OA" name="ShippedOrderSortingPoliciesFactory"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3g0aMDuSEfCwQ_ENXJj7OA" name="FidelityCardsFactory"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_sDLcwDuTEfCwQ_ENXJj7OA" name="Observer">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_x5d6sDuTEfCwQ_ENXJj7OA" name="update"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_sYXpoDuTEfCwQ_ENXJj7OA" name="Observable">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_1-MUYDuTEfCwQ_ENXJj7OA" name="registerObserver"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2R0bADuTEfCwQ_ENXJj7OA" name="removeObserver"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_2kCzcDuTEfCwQ_ENXJj7OA" name="notifyObserver"/>
+  </packagedElement>
 </uml:Model>
