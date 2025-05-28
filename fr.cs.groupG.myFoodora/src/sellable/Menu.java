@@ -19,7 +19,7 @@ public class Menu {
 	// getters
 	
 	public List<Dish> getStarters(){
-		return starters;
+		return starters ;
 	}
 	
 	public List<Dish> getMainDishes(){

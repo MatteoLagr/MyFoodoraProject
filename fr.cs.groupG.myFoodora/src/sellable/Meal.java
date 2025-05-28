@@ -60,7 +60,7 @@ public class Meal implements Sellable {
 	
 	// Setters
 	public void setMealOfWeek() {
-		this.mealOfWeek = mealOfWeek;
+		this.mealOfWeek = mealOfWeek ;
 	}
 	
 	public void discountPercentage() {

@@ -19,7 +19,7 @@ public class Dish implements Sellable{
 	
 // Getters
 	public String getName() {
-		return name;
+		return name ;
 	}
 	
 	public double getPrice() {
