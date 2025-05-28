@@ -1,5 +1,7 @@
 package users;
 
-public class Users {
+public abstract class Users {
+	
+	private 
 
 }
