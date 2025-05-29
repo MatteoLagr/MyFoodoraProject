@@ -36,6 +36,16 @@ public class Dish implements Sellable{
 		this.price = price;
 	}
 	
+	@Override
+	public String toString() {
+	    return "Dish{" +
+	            "name='" + name + '\'' +
+	            ", price=" + price +
+	            ", vegetarian=" + vegetarian +
+	            ", glutenFree=" + glutenFree +
+	            ", category='" + category + '\'' +
+	            '}';
+	}
 	
 	/////////////////////////////////////////////////////////////////
 	
@@ -48,7 +58,8 @@ public class Dish implements Sellable{
 	}
 	
 	public boolean isStandard() {
-		return true;
+		boolean notStandard = this.isVegetarian() && this.isGlutenFree();
+		return !notStandard;
 	}
 	
 	
