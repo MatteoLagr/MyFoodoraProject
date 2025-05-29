@@ -1,5 +1,9 @@
 package users;
 
-public class UsersFactory {
+import other.AbstractFactory;
+
+public class UsersFactory extends AbstractFactory {
+	
+	
 
 }

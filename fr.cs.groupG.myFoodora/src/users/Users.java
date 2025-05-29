@@ -7,6 +7,7 @@ public abstract class Users {
     protected int id;
     protected String username;
     protected String password;
+    protected String userType;
     
     public Users(String name, String surname, int id, String username, String password) {
         this.name = name;
@@ -14,6 +15,10 @@ public abstract class Users {
         this.id = id;
         this.username = username;
         this.password = password;
+    }
+    
+    public String getUserType() {
+    	return userType;
     }
     
    

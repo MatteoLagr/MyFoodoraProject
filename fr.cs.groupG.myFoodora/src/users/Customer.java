@@ -33,6 +33,10 @@ public class Customer extends Users{
 		this.fidelityPoints = 0;
 	}
 	
+	@Override
+	public String getUserType() {
+		return "Customer";
+	}
 	
 	public Point2D getAddress() {
 		return address;

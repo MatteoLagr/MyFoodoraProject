@@ -1,5 +1,7 @@
 package other;
 
-public interface AbstractFactory {
+public abstract class AbstractFactory {
+	
+	
 
 }
