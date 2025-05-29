@@ -1,11 +1,10 @@
 package deliverypolicies;
 
 import other.AbstractFactory;
-import other.DeliveryPolicies;
-import other.FidelityCards;
-import other.Sellable;
-import other.ShippedOrderSortingPolicies;
-import other.TargetProfitPolicies;
+import fidelitycard.FidelityCards;
+import sellable.Sellable;
+import sortingpolicies.ShippedOrderSortingPolicies;
+import targetprofitpolicies.TargetProfitPolicies;
 import users.Users;
 
 public class DeliveryPoliciesFactory extends AbstractFactory {
@@ -34,6 +33,7 @@ public class DeliveryPoliciesFactory extends AbstractFactory {
 		if (deliveryPoliciesType.equalsIgnoreCase("FastestDelivery")) {
 			return new FastestDelivery();
 		}
+		return null;
 	}
 	
 	

@@ -2,7 +2,7 @@ package users;
 
 import other.Order;
 
-public class Courier {
+public class Courier extends Users{
 	
 	private Point2D position;
 	private String phoneNumber;
@@ -10,7 +10,25 @@ public class Courier {
 	private int deliveredOrdersCount;
 	private boolean available;
 	
+	// Constructeur
+		public Courier(String name, String username, int id, String surname, String password,Point2D position, String phoneNumber, boolean onDuty, int deliveredOrdersCount, boolean available) {
+		    super(name, username, id, surname, password);
+			this.position = position;
+		    this.phoneNumber = phoneNumber;
+		    this.onDuty = onDuty;
+		    this.deliveredOrdersCount = deliveredOrdersCount;
+		    this.available = available;
+		}
 	
+		public Courier(String name, String username, int id, String surname, Point2D position, String phoneNumber) {
+			super(name, username, id, surname, "");
+			this.position = position;
+			this.phoneNumber = phoneNumber;
+			this.deliveredOrdersCount = 0;
+			this.onDuty = false;
+			this.available = false;
+		}
+		
 	// getters
 	public Point2D getPosition() {
 	    return position;
@@ -54,28 +72,22 @@ public class Courier {
 	}
 
 	
-	// Constructeur
-	public Courier(Point2D position, String phoneNumber, boolean onDuty, int deliveredOrdersCount, boolean available) {
-	    this.position = position;
-	    this.phoneNumber = phoneNumber;
-	    this.onDuty = onDuty;
-	    this.deliveredOrdersCount = deliveredOrdersCount;
-	    this.available = available;
-	}
-	
 	
 	// Méthodes : 
 	
-	public void acceptDelivery(Order order) {
-		
+	public boolean acceptDelivery(Order order) {
+		if (!this.isOnDuty()) {
+			System.out.println("OffDuty");
+			return false;
+		}
+		return true;
 	}
 	
-	public void refuseDelivery(Order order) {
-		
-	}
 	
 	public void completeDelivery(Order order) {
-		
+		if (this.acceptDelivery(order)) {
+			setDeliveredOrdersCount(this.deliveredOrdersCount + 1);
+		}
 	}
 
 }

@@ -1,11 +1,11 @@
 package users;
 
 import other.AbstractFactory;
-import other.DeliveryPolicies;
-import other.FidelityCards;
-import other.Sellable;
-import other.ShippedOrderSortingPolicies;
-import other.TargetProfitPolicies;
+import deliverypolicies.DeliveryPolicies;
+import fidelitycard.FidelityCards;
+import sellable.Sellable;
+import sortingpolicies.ShippedOrderSortingPolicies;
+import targetprofitpolicies.TargetProfitPolicies;
 import java.util.ArrayList;
 
 
@@ -13,10 +13,8 @@ public class UsersFactory extends AbstractFactory {
 	
 	private ArrayList<Customer> customers;
 	private ArrayList<Restaurants> restaurants;
-	
-	
-	
-	
+	private ArrayList<Courier> couriers;
+	private ArrayList<Manager> managers;
 	
 	
 	@Override
@@ -29,6 +27,7 @@ public class UsersFactory extends AbstractFactory {
 		
 		for (Restaurants restaurant:restaurants) {
 			if (restaurant.getUserType().equalsIgnoreCase(userType)) {
+				return new 
 				
 			}
 		}
