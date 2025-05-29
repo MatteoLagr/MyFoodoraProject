@@ -1,5 +1,6 @@
 package sellable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Menu {
@@ -31,11 +32,49 @@ public class Menu {
 	}
 	
 	public void addDish(Dish dish) {
-		
+		String dishCategory = dish.getCategory();
+		if (dishCategory == "starter") {starters.add(dish);} // j'en suis ici, finir de compléter
 	}
 	
 	public void removeDish(Dish dish) {
 		
 	}
 
+	
+	@Override
+	public String toString() {
+	    StringBuilder sb = new StringBuilder();
+	    sb.append("=== Menu ===\n");
+
+	    sb.append("\nStarters:\n");
+	    if (starters.isEmpty()) sb.append("  (none)\n");
+	    for (Dish dish : starters) {
+	        sb.append("  - ").append(dish.getName()).append(" (")
+	          .append(String.format("%.2f", dish.getPrice())).append(" €, ")
+	          .append(dish.isVegetarian() ? "Vegetarian" : "Non-Vegetarian").append(", ")
+	          .append(dish.isGlutenFree() ? "Gluten Free" : "Contains Gluten").append(")\n");
+	    }
+
+	    sb.append("\nMain Dishes:\n");
+	    if (mainDishes.isEmpty()) sb.append("  (none)\n");
+	    for (Dish dish : mainDishes) {
+	        sb.append("  - ").append(dish.getName()).append(" (")
+	          .append(String.format("%.2f", dish.getPrice())).append(" €, ")
+	          .append(dish.isVegetarian() ? "Vegetarian" : "Non-Vegetarian").append(", ")
+	          .append(dish.isGlutenFree() ? "Gluten Free" : "Contains Gluten").append(")\n");
+	    }
+
+	    sb.append("\nDesserts:\n");
+	    if (desserts.isEmpty()) sb.append("  (none)\n");
+	    for (Dish dish : desserts) {
+	        sb.append("  - ").append(dish.getName()).append(" (")
+	          .append(String.format("%.2f", dish.getPrice())).append(" €, ")
+	          .append(dish.isVegetarian() ? "Vegetarian" : "Non-Vegetarian").append(", ")
+	          .append(dish.isGlutenFree() ? "Gluten Free" : "Contains Gluten").append(")\n");
+	    }
+
+	    return sb.toString();
+	}
+
+	
 }
