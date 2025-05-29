@@ -17,6 +17,7 @@ public class MealTest {
         fullMealDishes.add(main);
         fullMealDishes.add(dessert);
         Meal fullMeal = new Meal("Menu Gourmand", fullMealDishes, false, 0.1);
+        System.out.println(fullMeal.toString());
 
         System.out.println("Test 1 - fullMeal:");
         System.out.println("Meal size: " + fullMeal.getMealSize()); // fullMeal

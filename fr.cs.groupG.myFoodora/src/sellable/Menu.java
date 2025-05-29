@@ -16,25 +16,18 @@ public class Menu {
 		this.desserts = desserts;
 	}
 	
-	// getters
-	
-	public List<Dish> getStarters(){
-		return starters ;
-	}
-	
-	public List<Dish> getMainDishes(){
-		return mainDishes;
-	}
-	
-	public List<Dish> getDesserts(){
-		return desserts;
-	}
-	
+	public List<Dish> getStarters() { return starters; }
+	public List<Dish> getMainDishes() { return mainDishes; }
+	public List<Dish> getDesserts() { return desserts; }
 	
 	
 	//////////////////
-	public List<Dish> getAllDishes(){
-		return starters;
+	public List<Dish> getAllDishes() {
+	    List<Dish> allDishes = new ArrayList<>();
+	    allDishes.addAll(starters);
+	    allDishes.addAll(mainDishes);
+	    allDishes.addAll(desserts);
+	    return allDishes;
 	}
 	
 	public void addDish(Dish dish) {
