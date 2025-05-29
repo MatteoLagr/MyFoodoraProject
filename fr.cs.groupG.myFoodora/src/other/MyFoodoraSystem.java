@@ -18,9 +18,27 @@ public class MyFoodoraSystem implements Observer{
 	private double markupPercentage;
 	private double deliveryCost;
 	
+	private static MyFoodoraSystem instance = null; //Utilisation d'un Singleton Pattern pour MyFoodoraSystem
+	
 	// productFactory : AbstractFactory
 	
+	private MyFoodoraSystem() {
+		this.managers = new ArrayList<>();
+        this.restaurants = new ArrayList<>();
+        this.customers = new ArrayList<>();
+        this.couriers = new ArrayList<>();
+        this.orderHistory = new ArrayList<>();
+        this.serviceFee = 0.0;
+        this.markupPercentage = 0.0;
+        this.deliveryCost = 0.0;
+	}
 	
+	public static MyFoodoraSystem getInstance() {
+		if (instance==null) {
+			instance = new MyFoodoraSystem();
+		}
+		return instance;
+	}
 	
 	// getters
 	public List<Manager> getManagers() {

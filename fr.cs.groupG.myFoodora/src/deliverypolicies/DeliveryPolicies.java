@@ -1,5 +1,6 @@
 package deliverypolicies;
 
+import other.Order;
 import users.Courier;
 
 public interface DeliveryPolicies {

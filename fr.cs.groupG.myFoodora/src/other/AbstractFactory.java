@@ -1,6 +1,12 @@
 package other;
 
+import deliverypolicies.DeliveryPolicies;
+import fidelitycard.FidelityCards;
+import sellable.Sellable;
+import sortingpolicies.ShippedOrderSortingPolicies;
+import targetprofitpolicies.TargetProfitPolicies;
 import users.Users;
+
 
 public abstract class AbstractFactory {
 	
