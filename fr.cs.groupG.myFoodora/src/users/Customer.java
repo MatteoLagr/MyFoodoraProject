@@ -3,7 +3,9 @@ package users;
 import java.util.ArrayList;
 import fidelitycard.FidelityCards;
 import other.Order;
-
+import other.OrderItem;
+import sellable.Meal;
+import sellable.Sellable;
 
 
 public class Customer extends Users{
@@ -86,8 +88,26 @@ public class Customer extends Users{
 	}
 	
 	//////////////////////////////////
-	public Order placeOrder(Restaurants restaurant, ArrayList<Object> items) {
-		
+	public Order placeOrder(Restaurants restaurant, ArrayList<OrderItem> items) {
+		Order order = new Order(this, restaurant);
+		for (OrderItem item : items) {
+			Sellable sellable = item.getItem();
+			boolean isOffered = false;
+			if (sellable instanceof Meal) {
+				isOffered = restaurant.getMeals().contains(sellable);
+			} else if (restaurant.getMenu() != null && restaurant.getMenu().getAllDishes() != null) {
+				isOffered = restaurant.getMenu().getAllDishes().contains(sellable);
+			}
+			
+			if (isOffered) {
+				order.addItem(item);
+			} else {
+	            System.out.println("Item '" + sellable + "' not offered by restaurant: " + restaurant.getName());
+			}
+		}
+		order.calculateFinalPrice();
+		orderHistory.add(order);
+		return order;
 	}
 	
 
