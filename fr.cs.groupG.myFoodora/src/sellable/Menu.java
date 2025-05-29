@@ -33,11 +33,17 @@ public class Menu {
 	
 	public void addDish(Dish dish) {
 		String dishCategory = dish.getCategory();
-		if (dishCategory == "starter") {starters.add(dish);} // j'en suis ici, finir de compléter
+		if (dishCategory.equals("starter")) {starters.add(dish);}
+		if (dishCategory.equals("mainDish")) {mainDishes.add(dish);}
+		if (dishCategory.equals("dessert")) {desserts.add(dish);}
 	}
 	
 	public void removeDish(Dish dish) {
-		
+		String dishCategory = dish.getCategory();
+		String dishName = dish.getName();
+		if (dishCategory == "starter") {starters.removeIf(dishToRemove -> dishToRemove.getName().equals(dishName));}
+		if (dishCategory == "starter") {starters.removeIf(dishToRemove -> dishToRemove.getName().equals(dishName));}
+		if (dishCategory == "starter") {starters.removeIf(dishToRemove -> dishToRemove.getName().equals(dishName));}
 	}
 
 	
