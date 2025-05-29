@@ -26,14 +26,7 @@ public class Dish implements Sellable{
 		return price;
 	}
 	
-	public boolean getVegetarian() {
-		return vegetarian;
-	}
-	
-	public boolean getGlutenFree() {
-		return glutenFree;
-	}
-	
+		
 	public String getCategory() {
 		return category;
 	}
@@ -47,14 +40,16 @@ public class Dish implements Sellable{
 	/////////////////////////////////////////////////////////////////
 	
 	public boolean isVegetarian() {
-		return true;
+		return vegetarian;
 	}
 	
 	public boolean isGlutenFree() {
-		return true;
+		return glutenFree;
 	}
 	
 	public boolean isStandard() {
 		return true;
 	}
+	
+	
 }
