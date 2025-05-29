@@ -89,6 +89,9 @@ public class MyFoodoraSystem implements Observer{
 	}
 
 	
+	// Constructeur
+	
+	
 	public double computeTotalIncome() {
 		return 0;
 	}
