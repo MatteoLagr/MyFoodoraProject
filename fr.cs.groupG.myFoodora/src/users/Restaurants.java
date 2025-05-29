@@ -5,7 +5,7 @@ import java.util.List;
 import sellable.Meal;
 import sellable.Menu;
 
-public class Restaurants {
+public class Restaurants extends Users{
 	
 	private Point2D location;
 	private Menu menu;
@@ -14,6 +14,31 @@ public class Restaurants {
 	private double specialDiscount;
 	private Meal mealOfWeek;
 	
+	public Restaurants(String name, String username, int id, String password, Point2D location, Menu menu, List<Meal> meals, double genericDiscount, double specialDiscount, Meal mealOfWeek) {
+		super(name, username, id, "", password); //Les restaurants n'ont pas de username
+	    this.location = location;
+	    this.menu = menu;
+	    this.meals = meals;
+	    this.genericDiscount = genericDiscount;
+	    this.specialDiscount = specialDiscount;
+	    this.mealOfWeek = mealOfWeek;
+	}
+	
+	public Restaurants(String name, String username, int id, Point2D location) {
+		super(name, username, id, "","");
+		this.location = location;
+		this.menu = new Menu();
+		this.meals = new ArrayList<Meal>();
+		this.genericDiscount = 0.05;
+		this.specialDiscount = 0.1;
+		this.mealOfWeek = new Meal();
+	}
+	
+	
+	@Override
+	public String getUserType() {
+		return "Restaurant";
+	}
 	
 	public Point2D getLocation() {
 		return location;
@@ -55,14 +80,7 @@ public class Restaurants {
 	
 	// notificationManager : NotificationManager
 	
-	public Restaurants(Point2D location, Menu menu, List<Meal> meals, double genericDiscount, double specialDiscount, Meal mealOfWeek) {
-	    this.location = location;
-	    this.menu = menu;
-	    this.meals = meals;
-	    this.genericDiscount = genericDiscount;
-	    this.specialDiscount = specialDiscount;
-	    this.mealOfWeek = mealOfWeek;
-	}
+	
 	
 	public void addDishMenu(Dish dish) {
 		

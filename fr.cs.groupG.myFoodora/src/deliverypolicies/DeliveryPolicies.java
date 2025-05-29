@@ -4,6 +4,6 @@ import users.Courier;
 
 public interface DeliveryPolicies {
 	
-	public Courier selectCourier();
+	public Courier selectCourier(Order order);
 
 }

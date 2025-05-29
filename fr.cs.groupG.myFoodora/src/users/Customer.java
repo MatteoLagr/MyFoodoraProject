@@ -1,6 +1,8 @@
 package users;
 
 import java.util.ArrayList;
+import other.FidelityCards;
+
 
 
 public class Customer extends Users{
@@ -8,12 +10,12 @@ public class Customer extends Users{
 	private Point2D address;
 	private String email;
 	private String phoneNumber;
-	private FidelityCard fidelityCard;
+	private FidelityCards fidelityCard;
 	private List<Order> orderHistory;
 	private boolean notificationConsent;
 	private int fidelityPoints;
 	
-	
+
 	public Customer(String name, String username, int id, String surname, String password, Point2D address, String email, String phoneNumber, FidelityCard fidelitycard, List<Order> orderHistory, boolean notificationConsent, int fidelityPoints) {
 		super(name, username, id, surname, password);
 		this.address=address;
@@ -23,12 +25,13 @@ public class Customer extends Users{
 		this.notificationConsent = notificationConsent;
 		this.fidelityPoints=fidelityPoints;
 	}
+	
 	public Customer(String name, String username, int id , String surname , Point2D address, String email, String phoneNumber) {
 		super(name, username, id, surname, "");
 		this.address=address;
 		this.email=email;
 		this.phoneNumber=phoneNumber;
-		this.orderHistory = new ArrayList<>();
+		this.orderHistory = new ArrayList<Order>();
 		this.notificationConsent = false;
 		this.fidelityPoints = 0;
 	}
@@ -50,7 +53,7 @@ public class Customer extends Users{
 		return phoneNumber;
 	}
 	
-	public FidelityCard getFidelityCard() {
+	public FidelityCards getFidelityCard() {
 		return fidelityCard;
 	}
 	
@@ -73,7 +76,7 @@ public class Customer extends Users{
 		//Ajouter le système pour notifier les restaurants que le customer veut ou non recevoir avec l'observer
 	}
 	
-	public void setFidelityCard(FidelityCard fidelityCard) {
+	public void setFidelityCard(FidelityCards fidelityCard) {
 		this.fidelityCard = fidelityCard;
 	}
 	
