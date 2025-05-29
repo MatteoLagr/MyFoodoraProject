@@ -61,7 +61,13 @@ public class Courier extends Users{
 
 	public void setOnDuty(boolean onDuty) {
 	    this.onDuty = onDuty;
+	    if (onDuty) {
+	        System.out.println("Courier " + getName() + " is now on duty.");
+	    } else {
+	        System.out.println("Courier " + getName() + " is now off duty.");
+	    }
 	}
+
 
 	public void setDeliveredOrdersCount(int deliveredOrdersCount) {
 	    this.deliveredOrdersCount = deliveredOrdersCount;
@@ -77,17 +83,36 @@ public class Courier extends Users{
 	
 	public boolean acceptDelivery(Order order) {
 		if (!this.isOnDuty()) {
-			System.out.println("OffDuty");
+			System.out.println("Courier" + getName() + "is offDuty");
 			return false;
 		}
 		return true;
 	}
 	
-	
 	public void completeDelivery(Order order) {
-		if (this.acceptDelivery(order)) {
-			setDeliveredOrdersCount(this.deliveredOrdersCount + 1);
-		}
+	    System.out.println("Courier " + getName() + " completed delivery for order: " + order.getId());
+	    incrementDeliveredOrdersCount();
 	}
+	    
+	private void incrementDeliveredOrdersCount() {
+	    this.deliveredOrdersCount++;
+	}
+	
+	@Override
+	public String toString() {
+	    return "Courier{" +
+	            "name='" + getName() + '\'' +
+	            ", username='" + getUsername() + '\'' +
+	            ", id=" + getId() +
+	            ", surname='" + getSurname() + '\'' +
+	            ", phoneNumber='" + phoneNumber + '\'' +
+	            ", position=" + position +
+	            ", onDuty=" + onDuty +
+	            ", available=" + available +
+	            ", deliveredOrdersCount=" + deliveredOrdersCount +
+	            '}';
+	}
+
+
 
 }
