@@ -21,11 +21,12 @@ public class Order {
 	private String orderId;
 	private Restaurants restaurant;
 	private String status;
+	private MyFoodoraSystem system;
 	
 	
 	//Constructeur 
 	
-	public Order(double finalPrice, ArrayList<OrderItem> items, Date dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status) {
+	public Order(double finalPrice, ArrayList<OrderItem> items, Date dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status,MyFoodoraSystem system) {
 		this.finalPrice = finalPrice;
 		this.items = items;
 		this.dateOrderPlaced = dateOrderPlaced;
@@ -34,6 +35,7 @@ public class Order {
 		this.orderId = orderId;
 		this.restaurant=restaurant;
 		this.status =status;
+		this.system = system;
 	}
 	
 	
@@ -64,6 +66,8 @@ public class Order {
 	
 	public String getStatus() {return status;}
 	
+	public MyFoodoraSystem getSystem() {return system;}
+	
 	//Setters
 	
 	public void assignCourier(Courier courier) {
@@ -72,6 +76,10 @@ public class Order {
 	
 	public void setStatus(String status) {
 		this.status=status;
+	}
+	
+	public void setSystem(MyFoodoraSystem system) {
+		this.system = system;
 	}
 	
 	//Autres méthodes
@@ -99,6 +107,61 @@ public class Order {
 	
 	public double calculateFinalPrice() {
 		double originalPrice = this.calculateOriginalPrice();
+		double result = originalPrice;
+	    
+	    if (customer.getFidelityCard() != null) {
+	        String cardType = customer.getFidelityCard().getTypeOfCard();
+	        
+	        if (cardType.equals("PointFidelityCard")) {
+	            // On caste vers la classe PointFidelityCard pour accéder aux méthodes spécifiques (getNumberPoints ici)
+	            PointFidelityCard pointCard = (PointFidelityCard) customer.getFidelityCard();
+	            int points = pointCard.getNumberPoints();
+	            if (points >= 100) {
+	            	pointCard.setPoints(points - 100);
+	            	result = originalPrice * 0.9;
+	            }   	
+	         }
+	        else if (cardType.equals("LotteryFidelityCard")) {
+	        	LotteryFidelityCard lotteryCard = (LotteryFidelityCard) customer.getFidelityCard();
+	        	double randomValue = Math.random();
+	        	if (randomValue < lotteryCard.getProbaWin()) {
+	        		result = 0;
+	        	}
+	        }
+	    }
+	    this.finalPrice = result;
+	    return result;
+	}
+	
+	
+	/////////////////////////////////////////////////////////
+	// Je crée 2nouvelles méthodes qui prennent en compte qu'on ajoute markup, frais de service et de livraison à la commande
+	
+	public double calculateOriginalPriceFees() {
+		double total = 0.0;
+		MyFoodoraSystem system = this.getSystem();
+		double totalAfterFees;
+        for (OrderItem item : items) {
+            double itemPrice = item.calculatePrice();
+            
+            // On vérifie si l'item est le meal of the week du restaurant en question 
+            if (item.getItem() instanceof Meal) {
+                Meal meal = (Meal) item.getItem();
+                if (restaurant.getMealOfWeek() != null && 
+                    meal.getName().equals(restaurant.getMealOfWeek().getName())) {
+                	//Si c'est le cas, on applique le special discount factor du restaurant pour le meal of the week
+                    double specialDiscount = restaurant.getSpecialDiscount();
+                    itemPrice = itemPrice * (1 - specialDiscount);
+                }
+            }
+            total += itemPrice;
+        }
+        totalAfterFees = total*(1+system.getMarkupPercentage()) + system.getServiceFee() + system.getDeliveryCost();
+        return totalAfterFees;
+	}
+	
+	public double calculateFinalPriceFees() {
+		double originalPrice = this.calculateOriginalPriceFees();
 		double result = originalPrice;
 	    
 	    if (customer.getFidelityCard() != null) {
