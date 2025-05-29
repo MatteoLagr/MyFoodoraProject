@@ -23,7 +23,7 @@ public class Meal implements Sellable {
 	public String getMealType() { return mealType; }
 	public String getMealSize() { return mealSize; }
 	public boolean getMealOfWeek() { return mealOfWeek; }
-	public double getPrice() { return price; }
+	public double getPrice() { return priceMeal; }
 	private double getDiscountPercentage() { return discountPercentage; }
 	private double getPriceMeal() { return priceMeal; }
 
@@ -48,7 +48,7 @@ public class Meal implements Sellable {
 		if (vege && !glutenfree) {return "This is a Vegetarian Meal";}
 		else if (!vege && glutenfree) {return "This is a Gluten Free Meal";}
 		else if (vege && glutenfree) {return "This is a Vegetarian and Gluten Free Meal";}
-		else {return "This is a Standard Meal (not Vegetarian nor Gluten Free";}
+		else {return "This is a Standard Meal (not Vegetarian nor Gluten Free)";}
 	}
 	
 	
@@ -87,5 +87,6 @@ public class Meal implements Sellable {
 			this.discountPercentage = discountPercentage;
 			this.mealSize = defineMealSize(dishes);
 			this.mealType = defineMealType(dishes);
+			this.priceMeal = computeMealPrice(dishes);
 		}
 }
