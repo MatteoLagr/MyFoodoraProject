@@ -22,7 +22,7 @@ public class Meal implements Sellable {
 	public List<Dish> getDishes() { return dishes; }
 	public String getMealType() { return mealType; }
 	public String getMealSize() { return mealSize; }
-	public boolean getMealOfWeek() { return mealOfWeek; }
+	public boolean isMealOfWeek() { return mealOfWeek; }
 	public double getPrice() { return priceMeal; }
 	private double getDiscountPercentage() { return discountPercentage; }
 	private double getPriceMeal() { return priceMeal; }

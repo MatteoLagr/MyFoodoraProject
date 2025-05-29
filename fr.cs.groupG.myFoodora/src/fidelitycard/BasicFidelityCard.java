@@ -8,7 +8,7 @@ import users.Restaurants;
 // la BasicFidelityCard donne accès aux réductions generic de chaque restaurant. On part du principe qu'il y a
 // une réduction sur tous les plats, dont le % change en fonction du restaurant
 
-public class BasicFidelityCard {
+public class BasicFidelityCard implements FidelityCards{
 	
 	private Customer customer;
 	
@@ -19,12 +19,14 @@ public class BasicFidelityCard {
 	// getter
 	public Customer getCustomer() {return customer;}
 	
+	
 	// on redéfinit les méthodes de l'interface
+	
 	@Override
 	public double getNormalPrice(Order order) {
-		double normalPrice =0;
-		for (OrderItem orderItem : order.getItems()) { normalPrice += orderItem.getPriceUnit()*orderItem.getQuantity();}		
+		return order.calculateOriginalPrice();
 	}
+	
 	
 	
 	@Override
@@ -34,7 +36,8 @@ public class BasicFidelityCard {
 		return getNormalPrice(order)*(1-genericDiscountPercentage);
 	}
 	
-	public String getTypeOfCard() {return "The user has a basic fidelity card";}
+	@Override
+	public String getTypeOfCard() {return "BasicFidelityCard";} //Pareil que pour point fidelity card
 	
 	
 

@@ -5,7 +5,7 @@ import other.OrderItem;
 import users.Customer;
 import users.Restaurants;
 
-public class LotteryFidelityCard {
+public class LotteryFidelityCard implements FidelityCards {
 
 	private Customer customer;
 	private double probaWin;
@@ -24,13 +24,12 @@ public class LotteryFidelityCard {
 	public void setProbaWin(double probaWin) {this.probaWin = probaWin;}
 	
 	// on redéfinit les méthodes de l'interface
+	
 	@Override
 	public double getNormalPrice(Order order) {
-		double normalPrice =0;
-		for (OrderItem orderItem : order.getItems()) { normalPrice += orderItem.getPriceUnit()*orderItem.getQuantity();}		
+		return order.calculateOriginalPrice();
 	}
 
-	
 	
 	@Override
 	public double computeFidelityPrice(Order order) {
@@ -40,7 +39,8 @@ public class LotteryFidelityCard {
 		else {System.out.println("Try again next time !");return getNormalPrice(order);}
 	}
 	
-	public String getTypeOfCard() {return "The user has a lottery fidelity card";}
+	@Override
+	public String getTypeOfCard() {return "LotteryFidelityCard";} //Pareil que pour point fidelity card
 	
 	
 

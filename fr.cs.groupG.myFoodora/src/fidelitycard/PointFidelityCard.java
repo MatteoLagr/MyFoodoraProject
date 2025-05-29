@@ -6,7 +6,7 @@ import users.Customer;
 import users.Restaurants;
 
 
-public class PointFidelityCard {
+public class PointFidelityCard implements FidelityCards{
 
 	
 	private Customer customer;
@@ -32,23 +32,22 @@ public class PointFidelityCard {
 	}
 	
 	// on redéfinit les méthodes de l'interface
+	
 	@Override
 	public double getNormalPrice(Order order) {
-		double normalPrice =0;
-		for (OrderItem orderItem : order.getItems()) { normalPrice += orderItem.getPriceUnit()*orderItem.getQuantity();}		
+		return order.calculateOriginalPrice();
 	}
-	
 	
 	@Override
 	public double computeFidelityPrice(Order order) {
 		Restaurants restaurant = order.getRestaurant();
-		double specialDiscountPercentage = restaurant.getSpecialDiscount();
-		return getNormalPrice(order)*0.9;
+		double specialDiscountPercentage = restaurant.getSpecialDiscount(); 
+		return getNormalPrice(order)*0.9; //On utilise pas specialDiscountPercentage ???
 	}
 	
 	
-	
-	public String getTypeOfCard() {return "The user has a points fidelity card";}
+	@Override
+	public String getTypeOfCard() {return "PointFidelityCard";} //J'ai modifié en "PointFidelityCard" pour pouvoir l'utiliser plus facilement dans Order
 	
 	
 }

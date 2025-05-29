@@ -90,7 +90,7 @@ public class Courier extends Users{
 	}
 	
 	public void completeDelivery(Order order) {
-	    System.out.println("Courier " + getName() + " completed delivery for order: " + order.getId());
+	    System.out.println("Courier " + getName() + " completed delivery for order: " + order.getOrderId());
 	    incrementDeliveredOrdersCount();
 	}
 	    

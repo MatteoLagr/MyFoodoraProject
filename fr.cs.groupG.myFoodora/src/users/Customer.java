@@ -1,7 +1,8 @@
 package users;
 
 import java.util.ArrayList;
-import other.FidelityCards;
+import fidelitycard.FidelityCards;
+import other.Order;
 
 
 
@@ -11,12 +12,12 @@ public class Customer extends Users{
 	private String email;
 	private String phoneNumber;
 	private FidelityCards fidelityCard;
-	private List<Order> orderHistory;
+	private ArrayList<Order> orderHistory;
 	private boolean notificationConsent;
 	private int fidelityPoints;
 	
 
-	public Customer(String name, String username, int id, String surname, String password, Point2D address, String email, String phoneNumber, FidelityCard fidelitycard, List<Order> orderHistory, boolean notificationConsent, int fidelityPoints) {
+	public Customer(String name, String username, int id, String surname, String password, Point2D address, String email, String phoneNumber, FidelityCards fidelitycard, ArrayList<Order> orderHistory, boolean notificationConsent, int fidelityPoints) {
 		super(name, username, id, surname, password);
 		this.address=address;
 		this.email=email;
@@ -58,7 +59,7 @@ public class Customer extends Users{
 	}
 	
 	public ArrayList<Order> getOrderHistory(){
-		return OrderHistory;
+		return orderHistory;
 	}
 	
 	public boolean isNotificationConsent() {
@@ -85,11 +86,11 @@ public class Customer extends Users{
 	}
 	
 	//////////////////////////////////
-	public Order placeOrder(Restaurant restaurant, List<Object> items) {
+	public Order placeOrder(Restaurants restaurant, ArrayList<Object> items) {
 		
 	}
 	
-	
+
 	
 	@Override
 	public String toString() {
