@@ -105,8 +105,6 @@ public class MyFoodoraSystem implements Observer{
 	}
 	
 	
-	 
-	
 	public void notifySpecialOffer(){
 		
 	}

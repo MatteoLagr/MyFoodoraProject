@@ -61,7 +61,7 @@ public class Customer extends Users implements Observer {
 				throw new IllegalArgumentException("This username has already been used");
 			}
 		}
-		this.address = new Point2D(0,0);
+		this.address = null;
 		this.email = null;
 		this.phoneNumber = null;
 		this.orderHistory = new ArrayList<Order>();

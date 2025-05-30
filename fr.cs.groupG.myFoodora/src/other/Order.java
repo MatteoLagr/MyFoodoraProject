@@ -196,7 +196,10 @@ public class Order {
 	    return result;
 	}
 	
-	
+	public double generatedProfit() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		return this.calculateFinalPriceFees()*system.getMarkupPercentage()-system.getDeliveryCost()+system.getServiceFee();
+	}
 	
 	public void addItem(OrderItem item) {
 		items.add(item);

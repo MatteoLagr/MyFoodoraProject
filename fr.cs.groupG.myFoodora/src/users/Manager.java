@@ -1,6 +1,12 @@
 package users;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+
 import other.MyFoodoraSystem;
+import other.Order;
 
 public class Manager extends Users{
 
@@ -16,7 +22,13 @@ public class Manager extends Users{
 		return "Manager";
 	}
 	
-	
+	/**
+	 * Cette méthode ajoute l'user en paramètre au système MyFoodora,
+	 * en faisant en sorte de l'ajouter dans la bonne catégorie.
+	 * Cette méthode fait aussi attention à ce que le type de ce user
+	 * soit géré par le système.
+	 * @param user
+	 */
 	public void addUser(Users user) {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 		if (user.getUserType().equalsIgnoreCase("Restaurant")) {
@@ -57,6 +69,12 @@ public class Manager extends Users{
 		
 	}
 	
+	/**
+	 * Cette méthode supprime l'user en paramètre au système MyFoodora.
+	 * Cette méthode fait aussi attention à ce que le type de ce user
+	 * soit géré par le système.
+	 * @param user
+	 */
 	public void removerUser(Users user) {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 		if (user.getUserType().equalsIgnoreCase("Restaurant")) {
@@ -105,6 +123,11 @@ public class Manager extends Users{
 		
 	}
 	
+	/**
+	 * Cette méthode permet au manager de modifier le service fee du système
+	 * MyFoodora, à condition que le nouveau service fee ne soit pas négatif.
+	 * @param serviceFee
+	 */
 	public void changeServiceFee(double serviceFee) {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 		if (serviceFee >= 0) {
@@ -115,6 +138,12 @@ public class Manager extends Users{
 		}
 	}
 	
+	/**
+	 * Cette méthode permet au manager de modifier le markup percentage
+	 * du système MyFoodora, à condition que ce markup soit dans le bon format
+	 * , c'est-à-dire un double entre 0 et 1.
+	 * @param markup
+	 */
 	public void changeMarkupPercentage(double markup) {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 		if (markup >= 0 && markup <=1) {
@@ -129,6 +158,12 @@ public class Manager extends Users{
 		
 	}
 	
+	/**
+	 * Cette méthode permet au manager de modifier le delivery cost du
+	 * système MyFoodora, à condition que le nouveau delivery cost ne
+	 * soit pas négatif.
+	 * @param deliveryCost
+	 */
 	public void changeDeliveryCost(double deliveryCost) {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 		if (deliveryCost >= 0) {
@@ -139,16 +174,93 @@ public class Manager extends Users{
 		}
 	}
 	
+	/**
+	 * Cette méthode permet de convertir un String en une
+	 * date, à condition que le String en paramètre soit dans le
+	 * bon format : dd/MM/yyyy.
+	 * @param date
+	 * @return
+	 */
+	public static LocalDate stringToDate(String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            return LocalDate.parse(date, formatter);
+        } catch (DateTimeParseException e) {
+            throw new IllegalArgumentException("Invalid format. Expected format : dd/MM/yyyy", e);
+        }
+    }
+	
 	public double computeTotalIncome(String startPeriod, String endPeriod) {
-		// jssp trop ce qu'on lui donne (un resto peut etre)
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		LocalDate startDate = stringToDate(startPeriod);
+		LocalDate endDate = stringToDate(endPeriod);
+		double totalIncome = 0;
+		if (endDate.isBefore(startDate)) {
+			throw new IllegalArgumentException("End date is before begin date");
+		}
+		else {
+			for (Order order : orderHistory) {
+				if ((order.getDateOrderPlaced().isEqual(startDate) || order.getDateOrderPlaced().isAfter(startDate)) &&
+			            (order.getDateOrderPlaced().isEqual(endDate) || order.getDateOrderPlaced().isBefore(endDate))) {
+					totalIncome+=order.calculateFinalPriceFees();
+				}
+			}
+		}
+		return totalIncome;
 	}
 	
 	public double computeTotalProfit(String startPeriod, String endPeriod) {
-		
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		LocalDate startDate = stringToDate(startPeriod);
+		LocalDate endDate = stringToDate(endPeriod);
+		double totalProfit = 0;
+		if (endDate.isBefore(startDate)) {
+			throw new IllegalArgumentException("End date is before begin date");
+		}
+		else {
+			for (Order order : orderHistory) {
+				if ((order.getDateOrderPlaced().isEqual(startDate) || order.getDateOrderPlaced().isAfter(startDate)) &&
+			            (order.getDateOrderPlaced().isEqual(endDate) || order.getDateOrderPlaced().isBefore(endDate))) {
+					totalProfit+=order.generatedProfit();
+				}
+			}
+		}
+		return totalProfit;
 	}
+		
+
 	
 	public double averageIncomeCustomer(String startPeriod, String endPeriod) {
-		
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		LocalDate startDate = stringToDate(startPeriod);
+		LocalDate endDate = stringToDate(endPeriod);
+		double averageIncome = 0;
+		int numberOfCustomer = 0;
+		ArrayList<Integer> customers = new ArrayList<Integer>();
+		if (endDate.isBefore(startDate)) {
+			throw new IllegalArgumentException("End date is before begin date");
+		}
+		else {
+			for (Order order : orderHistory) {
+				if ((order.getDateOrderPlaced().isEqual(startDate) || order.getDateOrderPlaced().isAfter(startDate)) &&
+			            (order.getDateOrderPlaced().isEqual(endDate) || order.getDateOrderPlaced().isBefore(endDate))) {
+					if (!customers.contains(order.getCustomer().getId())) {
+						customers.add(order.getCustomer().getId()); //On utilise Id car celui-ci est unique, on ne va donc pas compter deux fois le même customer
+					}
+				}
+			}
+			numberOfCustomer = customers.size();
+			if (numberOfCustomer==0) {
+				averageIncome=0;
+			}
+			else {
+				averageIncome = computeTotalIncome(startPeriod, endPeriod)/numberOfCustomer;
+			}
+		}
+		return averageIncome;
 	}
 	
 	public Restaurants getMostSellingRestaurant() {
