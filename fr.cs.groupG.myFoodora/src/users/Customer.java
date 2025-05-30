@@ -11,7 +11,7 @@ import sellable.Meal;
 import sellable.Sellable;
 
 
-public class Customer extends Users implements Observer {
+public class Customer extends Users {
 	
 	private Point2D address;
 	private String email;
@@ -106,22 +106,20 @@ public class Customer extends Users implements Observer {
 	/**
 	 * Permet au client de choisir s'il souhaite
 	 * recevoir ou non des notifications des restaurants.
-	 * Si le client accepte les notifications, il est enregistré en tant 
-	 * qu'observateur après de tous les restaurants du système MyFoodora.
-	 * Sinon, il ne recevra pas de notifications.
+	 * Si le client accepte les notifications, il recevra les notifications
+	 * via MyFoodoraSystem.
 	 * @param notificationConsent
 	 */
 	public void setNotificationConsent(boolean notificationConsent) {
 		this.notificationConsent = notificationConsent;
-		for(Restaurants restaurant : MyFoodoraSystem.getInstance().getRestaurants()) {
-			if (notificationConsent) {
-				restaurant.registerObserver(this);
-			}
-			else {
-				restaurant.removeObserver(this);
-			}
-		}
 	}
+	
+	
+	public void notifySpecialOffer(Restaurants restaurant, Meal mealOfWeek) {
+	    System.out.println("Customer " + getName() + " received a new offer from " + restaurant.getName() +
+	                       ": meal of the week is " + mealOfWeek.getName());
+	}
+
 	
 	public void setFidelityCard(FidelityCards fidelityCard) {
 		this.fidelityCard = fidelityCard;
@@ -166,7 +164,7 @@ public class Customer extends Users implements Observer {
 		return order;
 	}
 	
-	
+	/**
 	@Override
 	public void update(Observable observable, Meal mealOfWeek) {
 		if (observable instanceof Restaurants) {
@@ -176,6 +174,7 @@ public class Customer extends Users implements Observer {
 			System.out.println(returnString + mealOfWeek);
 		}
 	}
+	*/
 
 	
 	@Override

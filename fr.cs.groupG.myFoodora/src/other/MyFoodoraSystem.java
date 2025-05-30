@@ -78,6 +78,10 @@ public class MyFoodoraSystem implements Observer{
 	public void setDeliveryPolicy(DeliveryPolicies deliveryPolicy) {this.deliveryPolicy = deliveryPolicy;}
 
 
+	public void addRestaurant(Restaurants restaurant) {
+		restaurants.add(restaurant);
+		restaurant.setObservers(this);
+	}
 	
 	
 	
@@ -106,11 +110,18 @@ public class MyFoodoraSystem implements Observer{
 	}
 	
 	
-	public void notifySpecialOffer(){
-		
-	}
 	
 	public void update(Observable observable, Meal mealOfWeek){
+		if (observable instanceof Restaurants) {
+            Restaurants restaurant = (Restaurants) observable;
+            System.out.println("MyFoodoraSystem: new meal of the week at " + restaurant.getName());
+
+            for (Customer customer : customers) {
+                if (customer.isNotificationConsent()) {
+                    customer.notifySpecialOffer(restaurant, mealOfWeek);
+                }
+            }
+        }
 		
 	}
 }

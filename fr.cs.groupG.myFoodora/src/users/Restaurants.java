@@ -18,8 +18,8 @@ public class Restaurants extends Users implements Observable{
 	private double specialDiscount;
 	private Meal mealOfWeek;
 	private boolean newMealOfWeek;
-	private ArrayList<Observer> observers = new ArrayList<Observer>();
-	// private Observer observer;
+	private Observer observer;
+	//private ArrayList<Observer> observers = new ArrayList<Observer>();
 	
 	public Restaurants(String name, String username, int id, String password, Point2D location, Menu menu, List<Meal> meals, double genericDiscount, double specialDiscount, Meal mealOfWeek) {
 		super(name, username, id, "", password); //Les restaurants n'ont pas de username
@@ -94,12 +94,12 @@ public class Restaurants extends Users implements Observable{
 		this.notifyObserver();
 	}
 	
-	public ArrayList<Observer> getObservers(){
-		return observers;
+	public Observer getObserver(){
+		return observer;
 	}
 	
-	public void setObservers(ArrayList<Observer> observers) {
-		this.observers = observers;
+	public void setObservers(Observer observer) {
+		this.observer = observer;
 	}
 	
 	
@@ -131,16 +131,19 @@ public class Restaurants extends Users implements Observable{
 		return meal;
 	}
 	
+	/**
 	@Override
 	public void registerObserver(Observer obs) {
-		observers.add(obs);
+		observer.add(obs);
 	}
 	
 	@Override 
 	public void removeObserver(Observer obs) {
-		observers.remove(obs);
+		observer.remove(obs);
 	}
+	*/
 	
+	/**
 	@Override 
 	public void notifyObserver() {
 		if (this.newMealOfWeek) {
@@ -150,13 +153,13 @@ public class Restaurants extends Users implements Observable{
 			this.newMealOfWeek = false;
 			}		
 		}
+	*/
 	
-	/**
+	@Override
 	public void notifyObserver() {
 	    if (this.newMealOfWeek && observer != null) {
 	        observer.update(this, this.mealOfWeek);
 	        this.newMealOfWeek = false;
 	    }
-	*/
-
+	}
 }
