@@ -89,6 +89,8 @@ public class Restaurants extends Users implements Observable{
 	}
 	public void setMealOfWeek(Meal mealOfWeek) {
 		this.mealOfWeek = mealOfWeek;
+		this.newMealOfWeek = true;
+		this.notifyObserver();
 	}
 	
 	
