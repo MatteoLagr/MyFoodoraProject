@@ -1,6 +1,6 @@
 package targetprofitpolicies;
 
 public interface TargetProfitPolicies {
-	public TargetProfitPolicies getPolicyName();
+	public String getPolicyName();
 	public double computeParameters();
 }

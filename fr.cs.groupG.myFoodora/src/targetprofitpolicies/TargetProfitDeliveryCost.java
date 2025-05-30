@@ -27,6 +27,13 @@ public class TargetProfitDeliveryCost implements TargetProfitPolicies {
         this.markupPercentage = markupPercentage;
         this.numberOfOrders = numberOfOrders;
     }
+    
+    public TargetProfitDeliveryCost() {
+        this.targetProfit = -1;
+        this.serviceFee = -1;
+        this.markupPercentage = -1;
+        this.numberOfOrders = -1;
+    }
 
     public double getTargetProfit()     { return targetProfit; }
     public double getServiceFee()       { return serviceFee; }

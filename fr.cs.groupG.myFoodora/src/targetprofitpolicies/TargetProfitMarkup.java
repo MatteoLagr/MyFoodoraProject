@@ -27,6 +27,13 @@ public class TargetProfitMarkup implements TargetProfitPolicies {
         this.numberOfOrders = numberOfOrders;
     }
 
+    public TargetProfitMarkup() {
+		this.targetProfit = -1;
+		this.deliveryCost = -1;
+		this.serviceFee = -1;
+		this.numberOfOrders = -1;
+		}
+    
     /* ─── Getters ──────────────────────────────────────────────── */
     public double getTargetProfit()   { return targetProfit; }
     public double getServiceFee()     { return serviceFee; }
