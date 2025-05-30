@@ -62,5 +62,8 @@ public class Dish implements Sellable{
 		return !notStandard;
 	}
 	
-	
+	@Override
+	public String getSellableType() {
+		return "dish";
+	}
 }

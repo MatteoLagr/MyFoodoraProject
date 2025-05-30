@@ -24,8 +24,8 @@ public class Meal implements Sellable {
 	public String getMealSize() { return mealSize; }
 	public boolean isMealOfWeek() { return mealOfWeek; }
 	public double getPrice() { return priceMeal; }
-	private double getDiscountPercentage() { return discountPercentage; }
-	private double getPriceMeal() { return priceMeal; }
+	public double getDiscountPercentage() { return discountPercentage; }
+	public double getPriceMeal() { return priceMeal; }
 
 	// Setters
 	public void setMealOfWeek(boolean mealOfWeek) { this.mealOfWeek = mealOfWeek; }
@@ -114,5 +114,8 @@ public class Meal implements Sellable {
 
 		    return sb.toString();}
 
-		
+		@Override
+		public String getSellableType() {
+			return "meal";
+		}
 }
