@@ -4,7 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
+import deliverypolicies.DeliveryPolicies;
 import other.MyFoodoraSystem;
 import other.Order;
 
@@ -263,23 +266,166 @@ public class Manager extends Users{
 		return averageIncome;
 	}
 	
+	/**
+	 * Cette méthode donne le restaurant ayant reçu le plus de commandes
+	 * dans le système MyFoodora. Dans le où 2 ou plusieurs restaurants ont le plus
+	 * de commande, la méthode renvoie le restaurant ayant reçu une commande en premier.
+	 * @return
+	 */
 	public Restaurants getMostSellingRestaurant() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		ArrayList<Restaurants> bestRestaurant = new ArrayList<Restaurants>();
+		HashMap<Restaurants, Integer> ordersPerRestaurant = new HashMap<Restaurants, Integer>();
 		
+		for (Order order : orderHistory) {
+			Restaurants restaurant = order.getRestaurant();
+			if (ordersPerRestaurant.containsKey(restaurant)) {
+				ordersPerRestaurant.replace(restaurant, ordersPerRestaurant.get(restaurant)+1);
+			}
+			else {
+				ordersPerRestaurant.put(restaurant, 1);
+			}
+		}
+		int numberMaxOrder = Integer.MIN_VALUE;
+		for (Map.Entry<Restaurants, Integer> entry : ordersPerRestaurant.entrySet()) {
+            if (entry.getValue() > numberMaxOrder) {
+            	bestRestaurant.clear();
+            	numberMaxOrder = entry.getValue();
+            	bestRestaurant.add(entry.getKey());	
+            }
+            else if (entry.getValue() == numberMaxOrder){
+            	bestRestaurant.add(entry.getKey());
+            }
+        }	
+		return bestRestaurant.isEmpty() ? null : bestRestaurant.get(0);	//On renvoie arbitrairement le premier restaurant de la liste	
 	}
 	
+	/**
+	 * Cette méthode donne le restaurant ayant reçu le moins de commandes
+	 * dans le système MyFoodora. Dans le où 2 ou plusieurs restaurants ont le moins
+	 * de commande, la méthode renvoie le restaurant ayant reçu une commande en premier.
+	 * @return
+	 */
 	public Restaurants getLeastSellingRestaurant() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		ArrayList<Restaurants> leastRestaurant = new ArrayList<Restaurants>();
+		HashMap<Restaurants, Integer> ordersPerRestaurant = new HashMap<Restaurants, Integer>();
+		
+		for (Order order : orderHistory) {
+			Restaurants restaurant = order.getRestaurant();
+			if (ordersPerRestaurant.containsKey(restaurant)) {
+				ordersPerRestaurant.replace(restaurant, ordersPerRestaurant.get(restaurant)+1);
+			}
+			else {
+				ordersPerRestaurant.put(restaurant, 1);
+			}
+		}
+		int numberMinOrder = Integer.MAX_VALUE;
+		for (Map.Entry<Restaurants, Integer> entry : ordersPerRestaurant.entrySet()) {
+            if (entry.getValue() < numberMinOrder) {
+            	leastRestaurant.clear();
+            	numberMinOrder = entry.getValue();
+            	leastRestaurant.add(entry.getKey());	
+            }
+            else if (entry.getValue() == numberMinOrder){
+            	leastRestaurant.add(entry.getKey());
+            }
+        }	
+		return leastRestaurant.isEmpty() ? null : leastRestaurant.get(0);	
 		
 	}
 	
+	/**
+	 * Cette méthode donne le livreur ayant effectué le plus de commandes
+	 * dans le système MyFoodora. Dans le où 2 ou plusieurs livreurs ont le plus
+	 * de commande effectuées, la méthode renvoie le livreur ayant reçu une commande en premier.
+	 * @return
+	 */
 	public Courier getMostActiveCourier() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		ArrayList<Courier> bestCourier = new ArrayList<Courier>();
+		HashMap<Courier, Integer> ordersPerCourier = new HashMap<Courier, Integer>();
 		
+		for (Order order : orderHistory) {
+			Courier courier = order.getAssignedCourier();
+			if (ordersPerCourier.containsKey(courier)) {
+				ordersPerCourier.replace(courier, ordersPerCourier.get(courier)+1);
+			}
+			else {
+				ordersPerCourier.put(courier, 1);
+			}
+		}
+		int numberMaxOrder = Integer.MIN_VALUE;
+		for (Map.Entry<Courier, Integer> entry : ordersPerCourier.entrySet()) {
+            if (entry.getValue() > numberMaxOrder) {
+            	bestCourier.clear();
+            	numberMaxOrder = entry.getValue();
+            	bestCourier.add(entry.getKey());	
+            }
+            else if (entry.getValue() == numberMaxOrder){
+            	bestCourier.add(entry.getKey());
+            }
+        }	
+		return bestCourier.isEmpty() ? null : bestCourier.get(0);
 	}
 	
+	/**
+	 * Cette méthode donne le livreur ayant effectué le moins de commandes
+	 * dans le système MyFoodora. Dans le où 2 ou plusieurs livreurs ont le moins
+	 * de commande effectuées, la méthode renvoie le livreur ayant reçu une commande en premier.
+	 * @return
+	 * @return
+	 */
 	public Courier getLeastActiveCourier() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		ArrayList<Order> orderHistory = system.getOrderHistory();
+		ArrayList<Courier> worstCourier = new ArrayList<Courier>();
+		HashMap<Courier, Integer> ordersPerCourier = new HashMap<Courier, Integer>();
+		
+		for (Order order : orderHistory) {
+			Courier courier = order.getAssignedCourier();
+			if (ordersPerCourier.containsKey(courier)) {
+				ordersPerCourier.replace(courier, ordersPerCourier.get(courier)+1);
+			}
+			else {
+				ordersPerCourier.put(courier, 1);
+			}
+		}
+		int numberMinOrder = Integer.MIN_VALUE;
+		for (Map.Entry<Courier, Integer> entry : ordersPerCourier.entrySet()) {
+            if (entry.getValue() < numberMinOrder) {
+            	worstCourier.clear();
+            	numberMinOrder = entry.getValue();
+            	worstCourier.add(entry.getKey());	
+            }
+            else if (entry.getValue() == numberMinOrder){
+            	worstCourier.add(entry.getKey());
+            }
+        }	
+		return worstCourier.isEmpty() ? null : worstCourier.get(0);
 		
 	}
 	
+	
+	/**
+	 * Cette méthode permet au manager de modifier
+	 * la politique de livraison (assignation du "meilleur" livreur
+	 * à une commande selon une politique précise) du système MyFoodora.
+	 * La méthode fait attention à ce que la politique proposée en paramètre
+	 * soit valable.
+	 * @param policy
+	 */
 	public void setDeliveryPolicy(DeliveryPolicies policy) {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		if (policy.getDeliveryPolicyType() == "FairOccupationDelivery" || policy.getDeliveryPolicyType()=="FastestDelivery") {
+			system.setDeliveryPolicy(policy);
+		}
+		else {
+			throw new IllegalArgumentException("Unknown delivery policy: " + policy);
+		}
 		
 	}
 	

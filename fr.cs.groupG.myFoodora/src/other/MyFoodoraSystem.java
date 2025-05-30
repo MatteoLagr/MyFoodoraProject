@@ -5,6 +5,7 @@ import java.util.List;
 
 import deliverypolicies.DeliveryPolicies;
 import deliverypolicies.FastestDelivery;
+import sellable.Meal;
 import targetprofitpolicies.TargetProfitPolicies;
 import targetprofitpolicies.TargetProfitServiceFee;
 import users.Courier;
@@ -109,7 +110,7 @@ public class MyFoodoraSystem implements Observer{
 		
 	}
 	
-	public void update(){
+	public void update(Observable observable, Meal mealOfWeek){
 		
 	}
 }

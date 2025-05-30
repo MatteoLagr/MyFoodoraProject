@@ -19,6 +19,7 @@ public class Restaurants extends Users implements Observable{
 	private Meal mealOfWeek;
 	private boolean newMealOfWeek;
 	private ArrayList<Observer> observers = new ArrayList<Observer>();
+	// private Observer observer;
 	
 	public Restaurants(String name, String username, int id, String password, Point2D location, Menu menu, List<Meal> meals, double genericDiscount, double specialDiscount, Meal mealOfWeek) {
 		super(name, username, id, "", password); //Les restaurants n'ont pas de username
@@ -93,6 +94,14 @@ public class Restaurants extends Users implements Observable{
 		this.notifyObserver();
 	}
 	
+	public ArrayList<Observer> getObservers(){
+		return observers;
+	}
+	
+	public void setObservers(ArrayList<Observer> observers) {
+		this.observers = observers;
+	}
+	
 	
 	public void addDishMenu(Dish dish) {
 		menu.addDish(dish);
@@ -142,5 +151,12 @@ public class Restaurants extends Users implements Observable{
 			}		
 		}
 	
+	/**
+	public void notifyObserver() {
+	    if (this.newMealOfWeek && observer != null) {
+	        observer.update(this, this.mealOfWeek);
+	        this.newMealOfWeek = false;
+	    }
+	*/
 
 }
