@@ -3,6 +3,7 @@ package other;
 import java.util.ArrayList;
 import java.util.List;
 
+import deliverypolicies.DeliveryPolicies;
 import targetprofitpolicies.TargetProfitPolicies;
 import users.Courier;
 import users.Manager;
@@ -19,7 +20,8 @@ public class MyFoodoraSystem implements Observer{
 	private double serviceFee;
 	private double markupPercentage;
 	private double deliveryCost;
-	private TargetProfitPolicies policy;
+	private TargetProfitPolicies profitPolicy;
+	private DeliveryPolicies deliveryPolicy;
 	
 	private static MyFoodoraSystem instance = null; //Utilisation d'un Singleton Pattern pour MyFoodoraSystem
 	
@@ -34,7 +36,8 @@ public class MyFoodoraSystem implements Observer{
         this.serviceFee = 0.0;
         this.markupPercentage = 0.0;
         this.deliveryCost = 0.0;
-        this.policy = new TargetProfitPolicies(); // jsp trop à quoi sert ce bloc : en plus la ligne marche pas
+        this.profitPolicy = new TargetProfitServiceFee(0,0,0,100);
+        this.deliveryPolicy = null;
 	}
 	
 	public static MyFoodoraSystem getInstance() {
@@ -53,6 +56,7 @@ public class MyFoodoraSystem implements Observer{
 	public double getServiceFee() { return serviceFee; }
 	public double getMarkupPercentage() { return markupPercentage; }
 	public double getDeliveryCost() { return deliveryCost; }
+	public TargetProfitPolicies getProfitPolicy() {return profitPolicy;}
 
 	//setters
 	public void setManagers(List<Manager> managers) { this.managers = managers; }
@@ -63,6 +67,7 @@ public class MyFoodoraSystem implements Observer{
 	public void setServiceFee(double serviceFee) { this.serviceFee = serviceFee; }
 	public void setMarkupPercentage(double markupPercentage) { this.markupPercentage = markupPercentage; }
 	public void setDeliveryCost(double deliveryCost) { this.deliveryCost = deliveryCost; }
+	public void setTargetProfitPolicy(TargetProfitPolicies profitPolicy) {this.profitPolicy = profitPolicy;}
 
 
 	
@@ -78,6 +83,7 @@ public class MyFoodoraSystem implements Observer{
         this.serviceFee = 0.0;
         this.markupPercentage = 0.0;
         this.deliveryCost = 0.0;
+        this.profitPolicy = null;
 	}
 	
 	// Calcule le revenu total de la plateforme depuis sa création 
@@ -104,10 +110,6 @@ public class MyFoodoraSystem implements Observer{
 	return totalProfit;
 	}
 	
-	
-	public void setTargetProfitPolicy() {
-		
-	}
 	
 	public void allocateCourierToOrder() {
 		

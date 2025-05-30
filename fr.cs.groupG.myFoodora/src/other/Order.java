@@ -26,7 +26,7 @@ public class Order {
 	
 	//Constructeur 
 	
-	public Order(double finalPrice, ArrayList<OrderItem> items, Date dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status,MyFoodoraSystem system) {
+	public Order(double finalPrice, ArrayList<OrderItem> items, Date dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status) {
 		this.finalPrice = finalPrice;
 		this.items = items;
 		this.dateOrderPlaced = dateOrderPlaced;
@@ -35,7 +35,7 @@ public class Order {
 		this.orderId = orderId;
 		this.restaurant=restaurant;
 		this.status =status;
-		this.system = system;
+		this.system = MyFoodoraSystem.getInstance();
 	}
 	
 	
@@ -46,6 +46,7 @@ public class Order {
 		this.dateOrderPlaced = new Date();
 		this.orderId = UUID.randomUUID().toString();
 		this.status = "pending";
+		this.system = MyFoodoraSystem.getInstance();
 	}
 	
 	//Getters 
@@ -78,10 +79,7 @@ public class Order {
 		this.status=status;
 	}
 	
-	public void setSystem(MyFoodoraSystem system) {
-		this.system = system;
-	}
-	
+
 	//Autres méthodes
 	
 	// Méthode qui calcul le prix de la commande sans réduction avec les cartes de fidélités mais avec les réductions meal of the week
