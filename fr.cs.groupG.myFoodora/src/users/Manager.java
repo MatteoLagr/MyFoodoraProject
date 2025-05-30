@@ -1,12 +1,22 @@
 package users;
 
 
-public class Manager {
+public class Manager extends Users{
 	
-	// Pas besoin de constructeur si pas d'attributs
-	
+
 	
 	// Méthodes
+	
+	public Manager(String name, String surname, int id, String username) {
+		super(name, surname, id, username, "");
+	}
+
+
+	@Override
+	public String getUserType() {
+		return "Manager";
+	}
+	
 	
 	public void addUser(Users user) {
 		

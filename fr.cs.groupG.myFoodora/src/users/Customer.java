@@ -2,13 +2,16 @@ package users;
 
 import java.util.ArrayList;
 import fidelitycard.FidelityCards;
+import other.MyFoodoraSystem;
+import other.Observable;
+import other.Observer;
 import other.Order;
 import other.OrderItem;
 import sellable.Meal;
 import sellable.Sellable;
 
 
-public class Customer extends Users{
+public class Customer extends Users implements Observer {
 	
 	private Point2D address;
 	private String email;
@@ -72,9 +75,21 @@ public class Customer extends Users{
 		return fidelityPoints;
 	}
 	
-	
+	/**
+	 * Permet au client de choisir s'il souhaite
+	 * recevoir ou non des notifications
+	 * @param notificationConsent
+	 */
 	public void setNotificationConsent(boolean notificationConsent) {
 		this.notificationConsent = notificationConsent;
+		for(Restaurants restaurant : MyFoodoraSystem.getInstance().getRestaurants()) {
+			if (notificationConsent) {
+				restaurant.registerObserver(this);
+			}
+			else {
+				restaurant.removeObserver(this);
+			}
+		}
 		
 		//Ajouter le système pour notifier les restaurants que le customer veut ou non recevoir avec l'observer
 	}
@@ -110,6 +125,16 @@ public class Customer extends Users{
 		return order;
 	}
 	
+	
+	@Override
+	public void update(Observable observable, Meal mealOfWeek) {
+		if (observable instanceof Restaurants) {
+			String returnString = "New Special offer at : ";
+			Restaurants restaurant = (Restaurants) observable;
+			returnString+=restaurant.getName()+"\n";
+			System.out.println(returnString + mealOfWeek);
+		}
+	}
 
 	
 	@Override

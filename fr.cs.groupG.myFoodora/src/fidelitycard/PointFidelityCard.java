@@ -18,8 +18,17 @@ public class PointFidelityCard implements FidelityCards{
 		this.numberPoints = 0;
 		}
 	
+	public PointFidelityCard() {
+		
+	}
+	
 	// getter
-	public Customer getCustomer() {return customer;}
+	public Customer getCustomer() {
+		if (customer == null) {
+	        throw new IllegalStateException("Customer not set on fidelity card");
+	    }
+		return customer;
+		}
 	public int getNumberPoints() {return numberPoints;}
 	
 	// setter

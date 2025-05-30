@@ -1,11 +1,14 @@
 package users;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import other.Observable;
+import other.Observer;
 import sellable.Meal;
 import sellable.Menu;
 
-public class Restaurants extends Users{
+public class Restaurants extends Users implements Observable{
 	
 	private Point2D location;
 	private Menu menu;
@@ -13,6 +16,8 @@ public class Restaurants extends Users{
 	private double genericDiscount;
 	private double specialDiscount;
 	private Meal mealOfWeek;
+	private boolean newMealOfWeek;
+	private ArrayList<Observer> observers = new ArrayList<Observer>();
 	
 	public Restaurants(String name, String username, int id, String password, Point2D location, Menu menu, List<Meal> meals, double genericDiscount, double specialDiscount, Meal mealOfWeek) {
 		super(name, username, id, "", password); //Les restaurants n'ont pas de username
@@ -102,6 +107,26 @@ public class Restaurants extends Users{
 		
 	}
 	
+	
+	@Override
+	public void registerObserver(Observer obs) {
+		observers.add(obs);
+	}
+	
+	@Override 
+	public void removeObserver(Observer obs) {
+		observers.remove(obs);
+	}
+	
+	@Override 
+	public void notifyObserver() {
+		if (this.newMealOfWeek) {
+			for (Observer observer : observers) {
+				observer.update(this,this.mealOfWeek);
+			}
+			this.newMealOfWeek = false;
+			}		
+		}
 	
 
 }

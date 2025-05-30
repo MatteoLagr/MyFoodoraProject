@@ -24,9 +24,7 @@ public abstract class Users {
     	this.username = username;
     	this.id=nid;
     	++nid;
-    	this.password = password;
-    	
-    	
+    	this.password = password;	
     }
     
     public String getUserType() {

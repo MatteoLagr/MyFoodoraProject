@@ -16,8 +16,17 @@ public class LotteryFidelityCard implements FidelityCards {
 		this.customer = customer;
 		this.probaWin = probaWin;
 	}
+	
+	public LotteryFidelityCard() {
+		
+	}
 	// getters
-	public Customer getCustomer() {return customer;}
+	public Customer getCustomer() {
+		if (customer == null) {
+	        throw new IllegalStateException("Customer not set on fidelity card");
+	    }
+		return customer;
+		}
 	public double getProbaWin() {return probaWin;}
 	
 	// setter

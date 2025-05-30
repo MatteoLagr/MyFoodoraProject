@@ -11,22 +11,22 @@ public class DeliveryPoliciesFactory extends AbstractFactory {
 	
 	
 	@Override
-	public Users getUserType(String userType) {
+	public Users getUser(String userType) {
 		return null;
 	}
 	
 	@Override 
-	public Sellable getSellableType(String sellableType) {
+	public Sellable getSellable(String sellableType) {
 		return null;
 	}
 	
 	@Override
-	public TargetProfitPolicies getTargetProfitPoliciesType(String targetProfitPoliciesType) {
+	public TargetProfitPolicies getTargetProfitPolicies(String targetProfitPoliciesType) {
 		return null;
 	}
 	
 	@Override
-	public DeliveryPolicies getDeliveryPoliciesType(String deliveryPoliciesType) {
+	public DeliveryPolicies getDeliveryPolicies(String deliveryPoliciesType) {
 		if (deliveryPoliciesType.equalsIgnoreCase("FairOccupationDelivery")) {
 			return new FairOccupationDelivery();
 		}
@@ -38,12 +38,12 @@ public class DeliveryPoliciesFactory extends AbstractFactory {
 	
 	
 	@Override
-	public ShippedOrderSortingPolicies getSortingPoliciesType(String sortingPoliciesType) {
+	public ShippedOrderSortingPolicies getSortingPolicies(String sortingPoliciesType) {
 		return null;
 	}
 	
 	@Override 
-	public FidelityCards getFidelityCardsType(String fidelityCardType) {
+	public FidelityCards getFidelityCards(String fidelityCardType) {
 		return null;
 	}
 	

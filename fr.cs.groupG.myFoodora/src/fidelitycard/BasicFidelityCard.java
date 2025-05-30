@@ -16,8 +16,17 @@ public class BasicFidelityCard implements FidelityCards{
 	public BasicFidelityCard(Customer customer) {
 		this.customer = customer;
 	}
+	
+	public BasicFidelityCard() {
+		
+	}
 	// getter
-	public Customer getCustomer() {return customer;}
+	public Customer getCustomer() {
+		if (customer == null) {
+	        throw new IllegalStateException("Customer not set on fidelity card");
+	    }
+		return customer;
+		}
 	
 	
 	// on redéfinit les méthodes de l'interface
