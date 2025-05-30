@@ -6,5 +6,6 @@ import sellable.Sellable;
 
 public interface ShippedOrderSortingPolicies {
 	public List<Sellable> sortItems();
+	public String getSortingPolicies();
 
 }

@@ -11,6 +11,8 @@ import sellable.Sellable;
 
 public class LeastOrderedMenuItem {
 	
+	public String getSortingPolicies() {return "LeastOrderedMenuItem";}
+	
 	public List<Sellable> sortItems(){
 		ArrayList<OrderItem> orderItemHistory = new ArrayList<>();
 		
