@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
+import deliverypolicies.DeliveryPolicies;
 import fidelitycard.LotteryFidelityCard;
 import fidelitycard.PointFidelityCard;
 import sellable.Meal;
@@ -197,7 +198,12 @@ public class Order {
 	}
 	
 	
-	
+	public void allocateCourierToOrder() {
+		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
+		DeliveryPolicies deliveryPolicy = system.getDeliveryPolicy();
+		Courier courier = deliveryPolicy.selectCourier(this);
+		this.assignCourier(courier);
+		}
 	
 	
 	@Override

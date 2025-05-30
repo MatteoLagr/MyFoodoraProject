@@ -105,9 +105,7 @@ public class MyFoodoraSystem implements Observer{
 	}
 	
 	
-	public void allocateCourierToOrder(Order order) {
-		
-	}
+	 
 	
 	public void notifySpecialOffer(){
 		
