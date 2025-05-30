@@ -170,7 +170,7 @@ public class Customer extends Users implements Observer {
 	@Override
 	public void update(Observable observable, Meal mealOfWeek) {
 		if (observable instanceof Restaurants) {
-			String returnString = "New Special offer at : ";
+			String returnString = "New meal of the week at the restaurant : ";
 			Restaurants restaurant = (Restaurants) observable;
 			returnString+=restaurant.getName()+"\n";
 			System.out.println(returnString + mealOfWeek);
