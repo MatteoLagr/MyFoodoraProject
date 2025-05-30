@@ -5,6 +5,7 @@ import java.util.List;
 
 import other.Observable;
 import other.Observer;
+import sellable.Dish;
 import sellable.Meal;
 import sellable.Menu;
 
@@ -32,11 +33,10 @@ public class Restaurants extends Users implements Observable{
 	public Restaurants(String name, String username, int id, Point2D location) {
 		super(name, username, id, "","");
 		this.location = location;
-		this.menu = new Menu();
+		this.menu = new Menu(new ArrayList<Dish>(),new ArrayList<Dish>(),new ArrayList<Dish>());
 		this.meals = new ArrayList<Meal>();
 		this.genericDiscount = 0.05;
 		this.specialDiscount = 0.1;
-		this.mealOfWeek = new Meal();
 	}
 	
 	
@@ -83,30 +83,33 @@ public class Restaurants extends Users implements Observable{
 	}
 	
 	
-	// notificationManager : NotificationManager
-	
-	
-	
 	public void addDishMenu(Dish dish) {
-		
+		menu.addDish(dish);
 	}
 	
 	public void removeDishMenu(Dish dish) {
-		
+		menu.removeDish(dish);
 	}
 	
 	public void addMeal(Meal meal) {
-		
+		if (!meals.contains(meal)) {
+			meals.add(meal);
+		}
 	}
 	
 	public void removeMeal(Meal meal) {
-		
+		if (meals.contains(meal)) {
+			meals.remove(meal);
+		}
 	}
 	
 	public Meal createMeal(String name,List<Dish> dishes) {
-		
+		Meal meal = new Meal(name,dishes,false,genericDiscount);
+		if (!meals.contains(meal)) {
+			meals.add(meal);
+		}
+		return meal;
 	}
-	
 	
 	@Override
 	public void registerObserver(Observer obs) {

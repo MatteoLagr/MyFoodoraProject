@@ -77,7 +77,10 @@ public class Customer extends Users implements Observer {
 	
 	/**
 	 * Permet au client de choisir s'il souhaite
-	 * recevoir ou non des notifications
+	 * recevoir ou non des notifications des restaurants.
+	 * Si le client accepte les notifications, il est enregistré en tant 
+	 * qu'observateur après de tous les restaurants du système MyFoodora.
+	 * Sinon, il ne recevra pas de notifications.
 	 * @param notificationConsent
 	 */
 	public void setNotificationConsent(boolean notificationConsent) {
@@ -90,19 +93,29 @@ public class Customer extends Users implements Observer {
 				restaurant.removeObserver(this);
 			}
 		}
-		
-		//Ajouter le système pour notifier les restaurants que le customer veut ou non recevoir avec l'observer
 	}
 	
 	public void setFidelityCard(FidelityCards fidelityCard) {
 		this.fidelityCard = fidelityCard;
 	}
 	
+	/**
+	 * Permet au client de quitter le plan
+	 * de fidélité actuel
+	 */
 	public void unregisterFidelityCard() {
 		this.fidelityCard = null;
 	}
 	
-	//////////////////////////////////
+	/**
+	 * Cette méthode permet de préparer une commande auprès d'un restaurant particulier,
+	 * en vérifiant que les "items" demandés sont bien proposés par le restaurant.
+	 * La méthode renvoie aussi le prix à payer pour la commande, ajoute la commande
+	 * à l'historique et renvoie la commande.
+	 * @param restaurant
+	 * @param items
+	 * @return
+	 */
 	public Order placeOrder(Restaurants restaurant, ArrayList<OrderItem> items) {
 		Order order = new Order(this, restaurant);
 		for (OrderItem item : items) {

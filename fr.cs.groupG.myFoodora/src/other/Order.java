@@ -98,6 +98,10 @@ public class Order {
                     double specialDiscount = restaurant.getSpecialDiscount();
                     itemPrice = itemPrice * (1 - specialDiscount);
                 }
+                else { //Sinon, on applique juste le generic discount pour les "meals" du restaurant
+                	double genericDiscount = restaurant.getGenericDiscount();
+                	itemPrice = itemPrice * (1-genericDiscount);
+                }
             }
             total += itemPrice;
         }
