@@ -29,6 +29,15 @@ public class Courier extends Users{
 			this.available = false;
 		}
 		
+		public Courier(String name, String username, int id, String surname, String password) {
+			super(name, username, id, surname, password);
+			this.position = new Point2D(0,0);
+			this.phoneNumber = null;
+			this.deliveredOrdersCount = 0;
+			this.onDuty = false;
+			this.available = false;
+		}
+		
 	// getters
 		
 	/**

@@ -1,7 +1,7 @@
 package other;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import deliverypolicies.DeliveryPolicies;
@@ -16,7 +16,7 @@ public class Order {
 	
 	private double finalPrice;
 	private ArrayList<OrderItem> items;
-	private Date dateOrderPlaced;
+	private LocalDate dateOrderPlaced;
 	private Customer customer;
 	private Courier assignedCourier;
 	private String orderId;
@@ -27,7 +27,7 @@ public class Order {
 	
 	//Constructeur 
 	
-	public Order(double finalPrice, ArrayList<OrderItem> items, Date dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status) {
+	public Order(double finalPrice, ArrayList<OrderItem> items,LocalDate dateOrderPlaced, Customer customer, Courier assignedCourier, String orderId, Restaurants restaurant, String status) {
 		this.finalPrice = finalPrice;
 		this.items = items;
 		this.dateOrderPlaced = dateOrderPlaced;
@@ -44,7 +44,7 @@ public class Order {
 		this.customer = customer;
 		this.restaurant = restaurant;
 		this.items = new ArrayList<>();
-		this.dateOrderPlaced = new Date();
+		this.dateOrderPlaced = null;
 		this.orderId = UUID.randomUUID().toString();
 		this.status = "pending";
 		this.system = MyFoodoraSystem.getInstance();
@@ -56,7 +56,7 @@ public class Order {
 	
 	public ArrayList<OrderItem> getItems(){return items;}
 	
-	public Date getDateOrderPlaced() {return dateOrderPlaced;}
+	public LocalDate getDateOrderPlaced() {return dateOrderPlaced;}
 	
 	public Customer getCustomer() {return customer;}
 	
@@ -79,6 +79,11 @@ public class Order {
 	public void setStatus(String status) {
 		this.status=status;
 	}
+	
+	public void setDateOrderPlaced(LocalDate dateOrderPlaced) {
+	    this.dateOrderPlaced = dateOrderPlaced;
+	}
+
 	
 
 	//Autres méthodes

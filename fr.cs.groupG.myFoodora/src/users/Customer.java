@@ -24,20 +24,48 @@ public class Customer extends Users implements Observer {
 
 	public Customer(String name, String username, int id, String surname, String password, Point2D address, String email, String phoneNumber, FidelityCards fidelitycard, ArrayList<Order> orderHistory, boolean notificationConsent, int fidelityPoints) {
 		super(name, username, id, surname, password);
+		for (Customer customer : MyFoodoraSystem.getInstance().getCustomers()) {
+			if (customer.getUsername()==username) {
+				throw new IllegalArgumentException("This username has already been used");
+			}
+		}
 		this.address=address;
 		this.email=email;
 		this.phoneNumber=phoneNumber;
 		this.orderHistory = orderHistory;
+		this.fidelityCard = null;
 		this.notificationConsent = notificationConsent;
 		this.fidelityPoints=fidelityPoints;
 	}
 	
 	public Customer(String name, String username, int id , String surname , Point2D address, String email, String phoneNumber) {
 		super(name, username, id, surname, "");
+		for (Customer customer : MyFoodoraSystem.getInstance().getCustomers()) {
+			if (customer.getUsername()==username) {
+				throw new IllegalArgumentException("This username has already been used");
+			}
+		}
 		this.address=address;
 		this.email=email;
 		this.phoneNumber=phoneNumber;
 		this.orderHistory = new ArrayList<Order>();
+		this.fidelityCard = null;
+		this.notificationConsent = false;
+		this.fidelityPoints = 0;
+	}
+	
+	public Customer(String name, String username, int id, String surname, String password) {
+		super(name, username, id, surname, password);
+		for (Customer customer : MyFoodoraSystem.getInstance().getCustomers()) {
+			if (customer.getUsername()==username) {
+				throw new IllegalArgumentException("This username has already been used");
+			}
+		}
+		this.address = new Point2D(0,0);
+		this.email = null;
+		this.phoneNumber = null;
+		this.orderHistory = new ArrayList<Order>();
+		this.fidelityCard = null;
 		this.notificationConsent = false;
 		this.fidelityPoints = 0;
 	}
