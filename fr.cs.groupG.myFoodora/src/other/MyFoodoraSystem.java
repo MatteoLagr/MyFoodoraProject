@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import deliverypolicies.DeliveryPolicies;
+import deliverypolicies.FastestDelivery;
 import targetprofitpolicies.TargetProfitPolicies;
+import targetprofitpolicies.TargetProfitServiceFee;
 import users.Courier;
 import users.Manager;
 import users.Restaurants;
@@ -27,7 +29,9 @@ public class MyFoodoraSystem implements Observer{
 	
 	// productFactory : AbstractFactory
 	
-	private MyFoodoraSystem() {
+	// Constructeur pour le Singleton Pattern : il interdit toute création d'une instance en dehors d'ici
+	// C'est ce qui ns assure que le système est unique et inaccessible
+	private MyFoodoraSystem() { //on prend par défaut TargeProfitServiceFee(0,0,0,100) et FastestDelivery
 		this.managers = new ArrayList<>();
         this.restaurants = new ArrayList<>();
         this.customers = new ArrayList<>();
@@ -37,8 +41,9 @@ public class MyFoodoraSystem implements Observer{
         this.markupPercentage = 0.0;
         this.deliveryCost = 0.0;
         this.profitPolicy = new TargetProfitServiceFee(0,0,0,100);
-        this.deliveryPolicy = null;
+        this.deliveryPolicy = new FastestDelivery();
 	}
+	
 	
 	public static MyFoodoraSystem getInstance() {
 		if (instance==null) {
@@ -57,6 +62,7 @@ public class MyFoodoraSystem implements Observer{
 	public double getMarkupPercentage() { return markupPercentage; }
 	public double getDeliveryCost() { return deliveryCost; }
 	public TargetProfitPolicies getProfitPolicy() {return profitPolicy;}
+	public DeliveryPolicies getDeliveryPolicy() {return deliveryPolicy;}
 
 	//setters
 	public void setManagers(List<Manager> managers) { this.managers = managers; }
@@ -67,24 +73,12 @@ public class MyFoodoraSystem implements Observer{
 	public void setServiceFee(double serviceFee) { this.serviceFee = serviceFee; }
 	public void setMarkupPercentage(double markupPercentage) { this.markupPercentage = markupPercentage; }
 	public void setDeliveryCost(double deliveryCost) { this.deliveryCost = deliveryCost; }
-	public void setTargetProfitPolicy(TargetProfitPolicies profitPolicy) {this.profitPolicy = profitPolicy;}
+	public void setProfitPolicy(TargetProfitPolicies profitPolicy) {this.profitPolicy = profitPolicy;}
+	public void setDeliveryPolicy(DeliveryPolicies deliveryPolicy) {this.deliveryPolicy = deliveryPolicy;}
 
 
 	
-	// Constructeur : on a juste besoin de mettre 1 manager minimum et ensuite il modifie tout le reste. 
-	// à l'origine il n'y avait pas de restaurants ...
 	
-	public MyFoodoraSystem(ArrayList<Manager> managers) {
-		this.managers = managers;
-        this.restaurants = new ArrayList<>();
-        this.customers = new ArrayList<>();
-        this.couriers = new ArrayList<>();
-        this.orderHistory = new ArrayList<>();
-        this.serviceFee = 0.0;
-        this.markupPercentage = 0.0;
-        this.deliveryCost = 0.0;
-        this.profitPolicy = null;
-	}
 	
 	// Calcule le revenu total de la plateforme depuis sa création 
 	public double computeTotalIncome() {
@@ -104,14 +98,14 @@ public class MyFoodoraSystem implements Observer{
 			MyFoodoraSystem systemOrder = order.getSystem();
 			if (priceOrder != 0) {
 				totalProfit += systemOrder.getServiceFee();
-				totalProfit += priceOrder * (1+systemOrder.getMarkupPercentage());
+				totalProfit += priceOrder * (systemOrder.getMarkupPercentage());
 			}
 		}
 	return totalProfit;
 	}
 	
 	
-	public void allocateCourierToOrder() {
+	public void allocateCourierToOrder(Order order) {
 		
 	}
 	
