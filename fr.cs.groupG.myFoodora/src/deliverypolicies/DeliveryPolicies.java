@@ -6,5 +6,6 @@ import users.Courier;
 public interface DeliveryPolicies {
 	
 	public Courier selectCourier(Order order);
+	public String getDeliveryPolicyType();
 
 }

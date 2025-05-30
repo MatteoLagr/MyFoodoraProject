@@ -20,6 +20,11 @@ public class FairOccupationDelivery implements DeliveryPolicies{
 	}
 	
 	@Override
+	public String getDeliveryPolicyType() {
+		return "FairOccupationDelivery";
+	}
+	
+	@Override
 	public Courier selectCourier(Order order) {
 	    MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 	    Courier chosenCourier = null;
