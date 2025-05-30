@@ -52,4 +52,6 @@ public class TargetProfitMarkup implements TargetProfitPolicies {
                ", serviceFee=" + serviceFee +
                ", deliveryCost=" + deliveryCost +
                ", numberOfOrders=" + numberOfOrders +
-               ", computedMarkupPercentage=" + String.format("%.2f", computeParameters())
+               ", computedMarkupPercentage=" + String.format("%.2f", computeParameters());
+}
+}
