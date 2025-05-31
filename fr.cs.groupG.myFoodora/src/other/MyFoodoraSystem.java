@@ -92,7 +92,7 @@ public class MyFoodoraSystem implements Observer{
 	public double computeTotalIncome() {
 		double totalIncome = 0;
 		for (Order order : this.getOrderHistory()) {
-			totalIncome += order.calculateFinalPrice();
+			totalIncome += order.calculateFinalPriceFees();
 		}
 		return totalIncome;
 	}
