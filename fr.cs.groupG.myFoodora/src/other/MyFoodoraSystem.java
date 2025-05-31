@@ -1,5 +1,6 @@
 package other;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,10 +83,32 @@ public class MyFoodoraSystem implements Observer{
 
 
 	public void addRestaurant(Restaurants restaurant) {
+		for (Restaurants systemRestaurant : restaurants) {
+			if (systemRestaurant.equals(restaurant)) {
+				throw new InvalidParameterException("This restaurant has already been added to th system");
+			}
+		}
 		restaurants.add(restaurant);
 		restaurant.setObservers(this);
 	}
 	
+	public void addManager(Manager manager) {
+		for (Manager systemManager : managers) {
+			if (systemManager.equals(manager)) {
+				throw new InvalidParameterException("This manager has already been added to the system");
+			}
+		}
+		managers.add(manager);
+	}
+	
+	public void addCustomer(Customer customer) {
+		for (Customer systemCustomer : customers) {
+			if (systemCustomer.equals(customer)) {
+				throw new InvalidParameterException("This manager has already been added to the system");
+			}
+		}
+		customers.add(customer);
+	}
 	
 	
 	// Calcule le revenu total de la plateforme depuis sa création 

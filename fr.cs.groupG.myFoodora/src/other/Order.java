@@ -91,7 +91,7 @@ public class Order {
 	/////////////////////////////////////////////////////////
 	// Je crée 2nouvelles méthodes qui prennent en compte qu'on ajoute markup, frais de service et de livraison à la commande
 	
-	public double calculateOriginalPriceFees() {
+	public double calculateOriginalPrice() {
 		double total = 0.0;
 		MyFoodoraSystem system = this.getSystem();
 		double totalAfterFees;
@@ -114,8 +114,8 @@ public class Order {
         return totalAfterFees;
 	}
 	
-	public double calculateFinalPriceFees() {
-		double originalPrice = this.calculateOriginalPriceFees();
+	public double calculateFinalPrice() {
+		double originalPrice = this.calculateOriginalPrice();
 		double result = originalPrice;
 	    
 	    if (customer.getFidelityCard() != null) {
@@ -144,7 +144,7 @@ public class Order {
 	
 	public double generatedProfit() {
 		MyFoodoraSystem system = MyFoodoraSystem.getInstance();
-		return this.calculateFinalPriceFees()*system.getMarkupPercentage()-system.getDeliveryCost()+system.getServiceFee();
+		return this.calculateFinalPrice()*system.getMarkupPercentage()-system.getDeliveryCost()+system.getServiceFee();
 	}
 	
 	public void addItem(OrderItem item) {

@@ -25,7 +25,7 @@ public class Courier extends Users{
 			this.position = position;
 			this.phoneNumber = phoneNumber;
 			this.deliveredOrdersCount = 0;
-			this.onDuty = false;
+			this.onDuty = true;
 			this.available = false;
 		}
 		
@@ -34,9 +34,11 @@ public class Courier extends Users{
 			this.position = null;
 			this.phoneNumber = null;
 			this.deliveredOrdersCount = 0;
-			this.onDuty = false;
+			this.onDuty = true;
 			this.available = false;
 		}
+		
+		
 		
 	// getters
 		

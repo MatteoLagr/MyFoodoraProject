@@ -70,6 +70,22 @@ public class Customer extends Users {
 		this.fidelityPoints = 0;
 	}
 	
+	public Customer(String name, String surname, String username, Point2D address, String password) {
+		super(name, username, 0, surname, password);
+		this.name = name;
+		this.surname = surname;
+		for (Customer customer : MyFoodoraSystem.getInstance().getCustomers()) {
+			if (customer.getUsername()==username) {
+				throw new IllegalArgumentException("This username has already been used");
+			}
+		}
+		this.username = username;
+		this.password = password;
+		this.address = address;
+		this.orderHistory = new ArrayList<Order>();
+		this.fidelityCard = null;
+	}
+	
 	@Override
 	public String getUserType() {
 		return "Customer";

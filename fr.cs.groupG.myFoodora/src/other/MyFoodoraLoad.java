@@ -6,10 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import users.Customer;
+import users.Manager;
 import users.Point2D;
 import users.Restaurants;
 
 public class MyFoodoraLoad {
+	static MyFoodoraSystem system = MyFoodoraSystem.getInstance();
 	
 	public static void loadConfig(String filename) {
 	    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
@@ -61,9 +64,42 @@ public class MyFoodoraLoad {
 	}
 	
 	
-	private static void processManager(List<String> arguments) {
-		
+	private static void processCustomer(List<String> arguments) {
+		if (arguments.size() == 5) {
+			String name = arguments.get(0);
+			String surname = arguments.get(1);
+			String username = arguments.get(2);
+			String locate = arguments.get(3);
+			String password = arguments.get(4);
+			String[] coords = locate.split(",");
+	        if (coords.length != 2) {
+	            System.out.println("Error: invalid restaurant contact information : " + locate);
+	            return;
+	        }
+	        double x = Double.parseDouble(coords[0].trim());
+	        double y = Double.parseDouble(coords[1].trim());
+	        Point2D address = new Point2D(x, y);
+			Customer customer = new Customer(name, surname, username, address, password);
+			system.addCustomer(customer);
+		} else {
+	        System.out.println("Error: 5 expected values for [Customer] (firstName, lastName, username, address, password)");
+	    }
 	}
+	
+	private static void processManager(List<String> arguments) {
+		if (arguments.size() == 4) {
+			String name = arguments.get(0);
+			String surname = arguments.get(1);
+			String username = arguments.get(2);
+			String password = arguments.get(3);
+			Manager manager = new Manager(name, surname, username, password);
+			system.addManager(manager);						
+		}	else {
+	        System.out.println("Error: 4 expected values for [Manager] (name, surname, username, password)");
+	    }
+	}
+	
+	
 	private static void processRestaurant(List<String> arguments) {
 	    if (arguments.size() == 4) {
 	        String name = arguments.get(0);
@@ -79,7 +115,7 @@ public class MyFoodoraLoad {
 	        String username = arguments.get(2);
 	        String password = arguments.get(3);
 	        Restaurants restaurant = new Restaurants(name, username, location, password);
-	        MyFoodoraSystem.getInstance().addRestaurant(restaurant);
+	        system.addRestaurant(restaurant);
 	    } else {
 	        System.out.println("Error: 4 expected values for [Restaurant] (name, address, username, password)");
 	    }

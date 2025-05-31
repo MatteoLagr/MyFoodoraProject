@@ -18,6 +18,10 @@ public class Manager extends Users{
 	public Manager(String name, String surname, int id, String username) {
 		super(name, surname, id, username, "");
 	}
+	
+	public Manager(String name, String surname, String username, String password) {
+		super(name, surname, 0, username, password);
+	}
 
 
 	@Override

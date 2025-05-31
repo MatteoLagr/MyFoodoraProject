@@ -76,7 +76,7 @@ public class MyFoodoraCLUI {
 	    case "registerCourier":
 	        handleRegisterCourier(args);
 	        break;
-	    case "addDishRestauarantMenu":
+	    case "addDishRestaurantMenu":
 	        handleAddDishToRestaurantMenu(args);
 	        break;
 	    case "createMeal":
