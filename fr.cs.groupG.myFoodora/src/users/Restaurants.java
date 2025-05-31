@@ -143,6 +143,21 @@ public class Restaurants extends Users implements Observable{
 	}
 	
 	/**
+	 * Méthode utilisée pour l'interface CLUI.
+	 * @param dishName
+	 * @return
+	 */
+	public Dish getDishFromMenu(String dishName) {
+	    for (Dish d : menu.getAllDishes()) {
+	        if (d.getName().equalsIgnoreCase(dishName)) {
+	            return d;
+	        }
+	    }
+	    return null;
+	}
+
+	
+	/**
 	@Override
 	public void registerObserver(Observer obs) {
 		observer.add(obs);

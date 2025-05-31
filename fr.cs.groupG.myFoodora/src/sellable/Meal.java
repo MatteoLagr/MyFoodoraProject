@@ -90,6 +90,14 @@ public class Meal implements Sellable {
 			this.priceMeal = computeMealPrice(dishes);
 		}
 		
+		public Meal(String name, List<Dish> dishes) {
+		    this.name = name;
+		    this.dishes = dishes;
+		    this.mealOfWeek = false;
+		    this.discountPercentage = 0.05; 
+		}
+
+		
 	// Méthode toString d'affichage du Meal
 		@Override
 		public String toString() {

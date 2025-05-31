@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import sellable.Dish;
+import sellable.Meal;
+import users.Courier;
 import users.Customer;
 import users.Manager;
 import users.Point2D;
@@ -57,14 +60,124 @@ public class MyFoodoraLoad {
 	        case "Courier":    processCourier(values); break;
 	        case "Dish":   processDish(values); break;
 	        case "Meal":   processMeal(values); break;
-	        case "Menu":   processMenu(values); break;
 	        default:
 	            System.out.println("Section inconnue : " + section);
 	    }
 	}
 	
+	private static void processMeal(List<String> arguments) {
+	    if (arguments.size() != 6) {
+	        System.out.println("Error: 5 expected values for [Meal] : restaurantName, mealName, mealSize, starter, main, dessert");
+	        return;
+	    }
+	    
+	    String restaurantName = arguments.get(0);
+	    String mealName = arguments.get(1);
+	    String mealSize = arguments.get(2);
+	    String starterName = arguments.get(3);
+	    String mainName = arguments.get(4);
+	    String dessertName = arguments.get(5);
+
+	    for (Restaurants resto : MyFoodoraSystem.getInstance().getRestaurants()) {
+	        if (resto.getName().equalsIgnoreCase(restaurantName)) {
+	            Dish starter = "null".equalsIgnoreCase(starterName) ? null : resto.getDishFromMenu(starterName);
+	            Dish main = "null".equalsIgnoreCase(mainName) ? null : resto.getDishFromMenu(mainName);
+	            Dish dessert = "null".equalsIgnoreCase(dessertName) ? null : resto.getDishFromMenu(dessertName);
+
+	            
+	            if ("FullMeal".equalsIgnoreCase(mealSize)) {
+	                if (starter == null || main == null || dessert == null) {
+	                    System.out.println("Error : FullMeal not complete (" + mealName + ")");
+	                    return;
+	                }
+	                List<Dish> dishes = new ArrayList<>();
+	                dishes.add(starter);
+	                dishes.add(main);
+	                dishes.add(dessert);
+	                Meal fullMeal = new Meal(mealName, dishes);
+	                resto.addMeal(fullMeal);
+	                System.out.println("FullMeal " + mealName + "added to " + restaurantName);
+	                return;
+
+	            } else if ("HalfMeal".equalsIgnoreCase(mealSize)) {
+	                if ((starter == null && dessert == null) || main == null) {
+	                    System.out.println("Error : HalfMeal not valid. it needs a  main + started **or** dessert.");
+	                    return;
+	                }
+	                List<Dish> dishes = new ArrayList<>();
+	                dishes.add(starter);
+	                dishes.add(main);
+	                dishes.add(dessert);
+	                Meal halfMeal = new Meal(mealName, dishes); 
+	                resto.addMeal(halfMeal);
+	                System.out.println("HalfMeal " + mealName + " added to " + restaurantName);
+	                return;
+
+	            } else {
+	                System.out.println("Error : mealSize not valid. Expected : 'FullMeal' or 'HalfMeal'");
+	                return;
+	            }
+	        }
+	    }
+
+	    System.out.println("Restaurant '" + restaurantName + "' not found.");
+	}
+
+	
+	
+	private static void processDish(List<String> arguments) {
+		if (arguments.size() == 5) {
+			String restaurantName = arguments.get(0);
+			String name = arguments.get(1);
+			String category = arguments.get(2);
+			boolean vegetarian = false; 
+			boolean glutenFree = false;
+			String foodCategory = arguments.get(3);
+			if (foodCategory.equalsIgnoreCase("Vegetarian")) {
+			    vegetarian = true;
+			} else if (foodCategory.equalsIgnoreCase("GlutenFree")) {
+			    glutenFree = true;
+			}
+			double price = Double.parseDouble(arguments.get(4));
+			Dish dish = new Dish(name, price, vegetarian, glutenFree, category);
+			
+			boolean found = false;
+			for (Restaurants restaurant : system.getRestaurants()) {
+				if (restaurant.getName().equalsIgnoreCase(restaurantName)) {
+					restaurant.addDishMenu(dish);
+					found = true;
+					break;
+				}
+			}
+			if (!found) {
+	            System.out.println(" Restaurant '" + restaurantName + "' not found.");
+	        }
+		} else {
+	        System.out.println("Error: 5 expected values for [Dish] (restaurantName, dishName, dishCategory, foodCategory, unitPrice)");
+	    }
+	}
+	
+	
 	private static void processCourier(List<String> arguments) {
-		
+		if (arguments.size() == 5) {
+			String name = arguments.get(0);
+			String surname = arguments.get(1);
+			String username = arguments.get(2);
+			String locate = arguments.get(3);
+			String password = arguments.get(4);
+			String[] coords = locate.split(",");
+	        if (coords.length != 2) {
+	            System.out.println("Error: invalid restaurant contact information : " + locate);
+	            return;
+	        }
+	        double x = Double.parseDouble(coords[0].trim());
+	        double y = Double.parseDouble(coords[1].trim());
+	        Point2D location = new Point2D(x, y);
+			Courier courier = new Courier(name, surname, username, location, password);
+			system.addCourier(courier);
+		} else {
+	        System.out.println("Error: 5 expected values for [Courier] (firstName, lastName, username, location, password)");
+	    }
 	}
 	
 	private static void processCustomer(List<String> arguments) {

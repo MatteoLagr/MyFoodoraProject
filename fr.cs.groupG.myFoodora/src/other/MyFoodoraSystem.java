@@ -110,6 +110,15 @@ public class MyFoodoraSystem implements Observer{
 		customers.add(customer);
 	}
 	
+	public void addCourier(Courier courier) {
+		for (Courier systemCourier : couriers) {
+			if (systemCourier.equals(courier)) {
+				throw new InvalidParameterException("This manager has already been added to the system");
+			}
+		}
+		couriers.add(courier);
+	}
+	
 	
 	// Calcule le revenu total de la plateforme depuis sa création 
 	public double computeTotalIncome() {

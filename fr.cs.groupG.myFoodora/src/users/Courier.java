@@ -38,6 +38,14 @@ public class Courier extends Users{
 			this.available = false;
 		}
 		
+		public Courier(String name, String surname, String username, Point2D position, String password) {
+			super(name, username,0,surname,password);
+			this.position = position;
+			this.phoneNumber = null;
+			this.deliveredOrdersCount = 0;
+			this.onDuty = true;
+			this.available = false;
+		}
 		
 		
 	// getters

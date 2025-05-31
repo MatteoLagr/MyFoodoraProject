@@ -208,7 +208,7 @@ public class Manager extends Users{
 			for (Order order : orderHistory) {
 				if ((order.getDateOrderPlaced().isEqual(startDate) || order.getDateOrderPlaced().isAfter(startDate)) &&
 			            (order.getDateOrderPlaced().isEqual(endDate) || order.getDateOrderPlaced().isBefore(endDate))) {
-					totalIncome+=order.calculateFinalPriceFees();
+					totalIncome+=order.calculateFinalPrice();
 				}
 			}
 		}
