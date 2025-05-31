@@ -31,7 +31,6 @@ public abstract class Users {
     	return userType;
     }
     
-   
     public String getName() { 
     	return name; 
     	}
