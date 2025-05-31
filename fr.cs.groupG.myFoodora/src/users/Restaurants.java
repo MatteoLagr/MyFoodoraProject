@@ -49,6 +49,17 @@ public class Restaurants extends Users implements Observable{
 		this.specialDiscount = 0.1;
 	}
 	
+	public Restaurants(String name, String username, Point2D location, String password) {
+	    super(name, username, 0, "", password);
+	    this.location = location;
+	    this.menu = new Menu(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+	    this.meals = new ArrayList<>();
+	    this.genericDiscount = 0.05;
+	    this.specialDiscount = 0.10;
+	    this.mealOfWeek = null;
+	}
+
+	
 	
 	@Override
 	public String getUserType() {
