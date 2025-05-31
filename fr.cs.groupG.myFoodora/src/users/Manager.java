@@ -113,9 +113,7 @@ public class Manager extends Users{
 		}
 		else {
 			throw new IllegalArgumentException("We do not recognize this user: " + user.getUsername());
-		}
-		
-			
+		}	
 	}
 	
 	public void activateUser(Users user) {
