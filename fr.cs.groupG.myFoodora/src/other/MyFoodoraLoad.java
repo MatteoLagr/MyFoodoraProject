@@ -167,7 +167,7 @@ public class MyFoodoraLoad {
 			String password = arguments.get(4);
 			String[] coords = locate.split(",");
 	        if (coords.length != 2) {
-	            System.out.println("Error: invalid restaurant contact information : " + locate);
+	            System.out.println("Error: invalid courier contact information : " + locate);
 	            return;
 	        }
 	        double x = Double.parseDouble(coords[0].trim());
@@ -189,7 +189,7 @@ public class MyFoodoraLoad {
 			String password = arguments.get(4);
 			String[] coords = locate.split(",");
 	        if (coords.length != 2) {
-	            System.out.println("Error: invalid restaurant contact information : " + locate);
+	            System.out.println("Error: invalid customer contact information : " + locate);
 	            return;
 	        }
 	        double x = Double.parseDouble(coords[0].trim());

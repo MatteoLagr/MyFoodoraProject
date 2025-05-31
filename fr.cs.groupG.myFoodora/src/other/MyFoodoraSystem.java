@@ -124,7 +124,7 @@ public class MyFoodoraSystem implements Observer{
 	public double computeTotalIncome() {
 		double totalIncome = 0;
 		for (Order order : this.getOrderHistory()) {
-			totalIncome += order.calculateFinalPriceFees();
+			totalIncome += order.calculateFinalPrice();
 		}
 		return totalIncome;
 	}
@@ -134,7 +134,7 @@ public class MyFoodoraSystem implements Observer{
 	public double computeTotalProfit() {
 		double totalProfit =0;
 		for (Order order : this.getOrderHistory()) {// car un manager peut décider de changer les frais à un moment donc on peut pas simplement multiplier mais faut check en temps réel
-			double priceOrder = order.calculateFinalPriceFees();
+			double priceOrder = order.calculateFinalPrice();
 			MyFoodoraSystem systemOrder = order.getSystem();
 			if (priceOrder != 0) {
 				totalProfit += systemOrder.getServiceFee();
