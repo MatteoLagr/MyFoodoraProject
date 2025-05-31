@@ -1,5 +1,7 @@
 package fidelitycard;
 
+// donne accès à proba d'une commande gratuite mais pas mealOfWeek
+
 import other.Order;
 import other.OrderItem;
 import users.Customer;
@@ -34,19 +36,6 @@ public class LotteryFidelityCard implements FidelityCards {
 	
 	// on redéfinit les méthodes de l'interface
 	
-	@Override
-	public double getNormalPrice(Order order) {
-		return order.calculateOriginalPrice();
-	}
-
-	
-	@Override
-	public double computeFidelityPrice(Order order) {
-		Restaurants restaurant = order.getRestaurant();
-		double randomValue = Math.random();
-		if (randomValue < this.probaWin) {System.out.println("You have won ! This order is free !");return 0;}
-		else {System.out.println("Try again next time !");return getNormalPrice(order);}
-	}
 	
 	@Override
 	public String getTypeOfCard() {return "LotteryFidelityCard";} //Pareil que pour point fidelity card

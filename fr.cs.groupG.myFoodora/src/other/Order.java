@@ -86,61 +86,7 @@ public class Order {
 
 	
 
-	//Autres méthodes
-	
-	// Méthode qui calcul le prix de la commande sans réduction avec les cartes de fidélités mais avec les réductions meal of the week
-	public double calculateOriginalPrice() {
-		double total = 0.0;
-        for (OrderItem item : items) {
-            double itemPrice = item.calculatePrice();
-            
-            // On vérifie si l'item est le meal of the week du restaurant en question 
-            if (item.getItem() instanceof Meal) {
-                Meal meal = (Meal) item.getItem();
-                if (restaurant.getMealOfWeek() != null && 
-                    meal.getName().equals(restaurant.getMealOfWeek().getName())) {
-                	//Si c'est le cas, on applique le special discount factor du restaurant pour le meal of the week
-                    double specialDiscount = restaurant.getSpecialDiscount();
-                    itemPrice = itemPrice * (1 - specialDiscount);
-                }
-                else { //Sinon, on applique juste le generic discount pour les "meals" du restaurant
-                	double genericDiscount = restaurant.getGenericDiscount();
-                	itemPrice = itemPrice * (1-genericDiscount);
-                }
-            }
-            total += itemPrice;
-        }
-	    return total;
-	}
-	
-	public double calculateFinalPrice() {
-		double originalPrice = this.calculateOriginalPrice();
-		double result = originalPrice;
-	    
-	    if (customer.getFidelityCard() != null) {
-	        String cardType = customer.getFidelityCard().getTypeOfCard();
-	        
-	        if (cardType.equals("PointFidelityCard")) {
-	            // On caste vers la classe PointFidelityCard pour accéder aux méthodes spécifiques (getNumberPoints ici)
-	            PointFidelityCard pointCard = (PointFidelityCard) customer.getFidelityCard();
-	            int points = pointCard.getNumberPoints();
-	            if (points >= 100) {
-	            	pointCard.setPoints(points - 100);
-	            	result = originalPrice * 0.9;
-	            }   	
-	         }
-	        else if (cardType.equals("LotteryFidelityCard")) {
-	        	LotteryFidelityCard lotteryCard = (LotteryFidelityCard) customer.getFidelityCard();
-	        	double randomValue = Math.random();
-	        	if (randomValue < lotteryCard.getProbaWin()) {
-	        		result = 0;
-	        	}
-	        }
-	    }
-	    this.finalPrice = result;
-	    return result;
-	}
-	
+		
 	
 	/////////////////////////////////////////////////////////
 	// Je crée 2nouvelles méthodes qui prennent en compte qu'on ajoute markup, frais de service et de livraison à la commande

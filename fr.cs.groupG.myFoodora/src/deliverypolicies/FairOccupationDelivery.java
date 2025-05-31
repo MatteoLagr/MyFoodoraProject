@@ -4,6 +4,8 @@ import other.MyFoodoraSystem;
 import other.Order;
 import users.Courier;
 
+// 2 livreurs même nbre livraisons, prendre plus proche
+
 public class FairOccupationDelivery implements DeliveryPolicies{
 	
 //	public Courier selectCourier(List<Courier>) {

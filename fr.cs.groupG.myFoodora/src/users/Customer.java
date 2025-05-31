@@ -116,7 +116,7 @@ public class Customer extends Users {
 	
 	
 	public void notifySpecialOffer(Restaurants restaurant, Meal mealOfWeek) {
-	    System.out.println("Customer " + getName() + " received a new offer from " + restaurant.getName() +
+	    System.out.println("You have received a new offer from " + restaurant.getName() +
 	                       ": meal of the week is " + mealOfWeek.getName());
 	}
 
