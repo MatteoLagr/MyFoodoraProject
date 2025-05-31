@@ -63,6 +63,9 @@ public class MyFoodoraLoad {
 	    }
 	}
 	
+	private static void processCourier(List<String> arguments) {
+		
+	}
 	
 	private static void processCustomer(List<String> arguments) {
 		if (arguments.size() == 5) {
