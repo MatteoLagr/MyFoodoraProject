@@ -26,7 +26,10 @@ public class MyFoodoraSystem implements Observer{
 	private TargetProfitPolicies profitPolicy;
 	private DeliveryPolicies deliveryPolicy;
 	
-	private static MyFoodoraSystem instance = null; //Utilisation d'un Singleton Pattern pour MyFoodoraSystem
+	/**
+	 * Nous implémentons un Singleton Pattern pour MyFoodoraSystem
+	 */
+	private static MyFoodoraSystem instance = null; 
 	
 	// productFactory : AbstractFactory
 	
